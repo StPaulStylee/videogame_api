@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All Access Video Game Data</title>
+    <!-- Vendors -->
+    <script src="\assets\vendors\angular.min.js"></script>
+    <script src="\assets\vendors\angular-route.min.js"></script>
+    <!-- Angular Setup -->
+    <script src="\scripts\app.config.js"></script>
+    <script src="\scripts\app.module.js"></script>
+    <!-- Controllers -->
+    <script src="\scripts\controllers\api.controller.js"></script>
+    <!-- Services  -->
+    <script src="\scripts\services\videoGameApi.service.js"></script>
+  </head>
+  <body ng-app="videoGameApp" ng-controller="videoGameAPIController as api">
+    <form ng-submit="api.searchAPI(api.search)">
+      <input type="search" ng-model="api.search" />
+      <button type="submit">Search</button>
+    </form>
+  </body>
+</html>
