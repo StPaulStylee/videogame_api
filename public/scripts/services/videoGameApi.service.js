@@ -11,9 +11,9 @@ function VideoGameAPIService ($http) {
     return $http.get(API + '/search', {
       params: {
         api_key: key,
-        //format: 'json',
+        format: 'json',
         query: query,
-        resources: 'game'
+        resources: 'game',
       }
     }).then(function(response){
         return response;

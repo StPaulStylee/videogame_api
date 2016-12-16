@@ -19,5 +19,12 @@
       <input type="search" ng-model="api.search" />
       <button type="submit">Search</button>
     </form>
+    <section id="results">
+      <ul id="resultsList">
+        <li ng-repeat="name in api.searchResults">
+          {{ name.name }}
+        </li>
+      </ul>
+    </section>
   </body>
 </html>
