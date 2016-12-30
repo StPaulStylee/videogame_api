@@ -3,14 +3,15 @@ angular.module('videoGameApp')
 
 function videoGameAPIController(vgAPI) {
   var ctrl = this;
+  //ctrl.searchResults = [];
   console.log('videoGameAPIController Loaded');
 
   ctrl.searchAPI = function(searchTerm) {
-    var searchResults;
+    ctrl.searchResults;
     vgAPI.searchAPI(searchTerm).then(function(results){
       // console.log('Results from search: ', results);
-      searchResults = results;
-      console.log(searchResults.data.results);
+      ctrl.searchResults = results.data.results;
+      console.log(ctrl.searchResults);
     });
   }
 

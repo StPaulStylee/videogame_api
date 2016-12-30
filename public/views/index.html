@@ -20,9 +20,27 @@
       <button type="submit">Search</button>
     </form>
     <section id="results">
-      <ul id="resultsList">
-        <li ng-repeat="name in api.searchResults">
-          {{ name.name }}
+      <ul id="resultsList" ng-repeat="game in api.searchResults">
+        <li>
+          {{ game.name }}
+        </li>
+        <li>
+          {{ game.deck }}
+        </li>
+        <li>
+          {{ game.original_release_date }}
+        </li>
+        <ol>
+          <li ng-repeat="platforms in game.platforms">
+              {{ platforms.name }}
+          </li>
+        </ol>
+        <ol>
+          <li ng-repeat="ratings in game.original_game_rating">
+              {{ ratings.name }}
+          </li>
+        </ol>
+          <img ng-src="{{ game.image.small_url }}" />
         </li>
       </ul>
     </section>
