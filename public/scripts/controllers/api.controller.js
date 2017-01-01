@@ -1,7 +1,7 @@
 angular.module('videoGameApp')
        .controller('videoGameAPIController', videoGameAPIController);
 
-function videoGameAPIController(vgAPI) {
+function videoGameAPIController(vgAPI, favServ) {
   var ctrl = this;
   //ctrl.searchResults = [];
   console.log('videoGameAPIController Loaded');
@@ -13,6 +13,10 @@ function videoGameAPIController(vgAPI) {
       ctrl.searchResults = results.data.results;
       console.log(ctrl.searchResults);
     });
+  }
+
+  ctrl.addFavorite = function(data) {
+    favServ.addFavorite(data);
   }
 
 

@@ -6,4 +6,5 @@ function favoritesController() {
 
   var ctrl = this;
 
+
 }// end of favoritesController
