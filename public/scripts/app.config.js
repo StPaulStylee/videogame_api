@@ -1,5 +1,5 @@
 angular.module('videoGameApp')
-       .config(function($routeProvider, $locationProvider){
+       .config(function($routeProvider, $locationProvider) {
          $routeProvider.when('/home', {
            templateUrl: 'views/home.html',
            controller: 'videoGameAPIController as api'
@@ -17,3 +17,5 @@ angular.module('videoGameApp')
          });
          $locationProvider.html5Mode(true);
        });
+
+console.log('config loaded!');
