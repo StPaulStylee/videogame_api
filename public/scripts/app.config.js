@@ -1,7 +1,7 @@
 angular.module('videoGameApp')
        .config(function($routeProvider, $locationProvider) {
-         $routeProvider.when('/home', {
-           templateUrl: 'views/home.html',
+         $routeProvider.when('/search', {
+           templateUrl: 'views/search.html',
            controller: 'videoGameAPIController as api'
          }).when('/favorites', {
            templateUrl: 'views/favorites.html',
@@ -13,7 +13,7 @@ angular.module('videoGameApp')
            templateUrl: 'views/your_rankings.html',
            controller: 'rankingsController as rank'
          }).otherwise({
-           redirectTo: '/home'
+           redirectTo: '/search'
          });
          $locationProvider.html5Mode(true);
        });
