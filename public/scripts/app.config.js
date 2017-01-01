@@ -17,5 +17,3 @@ angular.module('videoGameApp')
          });
          $locationProvider.html5Mode(true);
        });
-
-console.log('config loaded!');
