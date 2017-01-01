@@ -11,7 +11,7 @@ angular.module('videoGameApp')
            controller: 'wishlistController as wish'
          }).when('/your_rankings', {
            templateUrl: 'views/your_rankings.html',
-           controller: 'rankingController as rank'
+           controller: 'rankingsController as rank'
          }).otherwise({
            redirectTo: '/home'
          });
