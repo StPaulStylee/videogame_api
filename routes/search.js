@@ -5,5 +5,4 @@ const pool = require('../database/connection.js');
 
 
 
-
 module.exports = router;

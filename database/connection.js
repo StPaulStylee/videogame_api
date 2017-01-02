@@ -9,6 +9,5 @@ const config = {
 }
 
 const pool = new pg.Pool(config);
-//console.log('From connection.js: ', pool);
 
 module.exports = pool;

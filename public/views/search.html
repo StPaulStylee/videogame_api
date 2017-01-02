@@ -25,7 +25,7 @@
     </ol>
       <img ng-src="{{ game.image.small_url }}" />
     </li>
-    <button type="button" value="game" ng-click="api.addFavorite(game)">Add to Favorites</button>
+    <button type="button" ng-controller="favoritesController as favorite" ng-click="favorite.addFavorite(game)">Add to Favorites</button>
     <button type="button" value="game">Add to Wishlist</button>
     <!-- Add ranking system here -->
   </ul>

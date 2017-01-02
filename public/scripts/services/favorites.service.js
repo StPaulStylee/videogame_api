@@ -13,8 +13,11 @@ function FavoriteService($http) {
       game_rating: data.original_game_rating,
       game_image: data.image.thumb_url
     };
-    console.log('From Service: ', service.newFavorite);
+    return $http.post('/favorites', service.newFavorite)
+      .then(function(response){
+        return response;
+      });
+    };
+    //console.log('From Service: ', service.newFavorite);
 
-  };
-
-}// End of service
+  } // End of service
