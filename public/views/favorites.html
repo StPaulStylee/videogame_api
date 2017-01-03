@@ -1,1 +1,24 @@
 <h3>Favorites</h3>
+<section id="favorites_list">
+  <ul class="favorites" ng-repeat="game in favorite.favoritesList">
+    <li>
+      {{ game.title }}
+    </li>
+    <li>
+      {{ game.description }}
+    </li>
+    <li>
+      {{ game.release_date }}
+    </li>
+    <li ng-repeat="ratings in game.game_rating">
+      {{ ratings }}
+    </li>
+    <li ng-repeat="platforms in game.platforms">
+      {{ platforms }}
+    </li>
+    <li>
+      <img ng-src="{{ game.game_image }}" alt="{{ game.title }} image" />
+    </li>
+    <button type="button" ng-click="favorite.removeFavorite()">Remove</button>
+  </ul>
+</section>

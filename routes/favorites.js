@@ -26,5 +26,29 @@ router.post('/', function(req, res){
   });
 });
 
+router.get('/', function(req, res){
+  pool.connect(function(err, client, done){
+    try {
+      if(err) {
+        console.log('Error connecting to the DB: ', err);
+        res.sendStatus(500);
+        return;
+      }
+      client.query('SELECT * FROM favorites',
+        function(err, result){
+          if(err){
+            console.log('Error querying the DB: ', err);
+            res.sendStatus(500);
+            return;
+          }
+          res.send(result.rows)
+        });
+    }
+    finally{
+      done();
+    }
+  });
+});
+
 
 module.exports = router;

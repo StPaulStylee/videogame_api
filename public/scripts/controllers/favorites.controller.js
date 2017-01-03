@@ -12,5 +12,18 @@ function favoritesController(favServ) {
     });
   };
 
+  ctrl.getFavorites = function() {
+    ctrl.favoritesList;
+    favServ.getFavorites().then(function(favorites){
+      ctrl.favoritesList = favorites.data;
+    //  console.log(ctrl.favoritesList);
+    });
+  };
 
-}// end of favoritesController
+  ctrl.removeFavorite = function() {
+    console.log('clicked');
+  };
+  // On load of favorites partial, get all favorites
+  ctrl.getFavorites();
+
+} // end of favoritesController

@@ -8,3 +8,7 @@ id SERIAL PRIMARY KEY,
   game_rating varchar ARRAY,
   game_image varchar(120)
 );
+
+/*2. Add new column to favorites table */
+ALTER TABLE favorites
+ADD favorite_comment varchar(500);

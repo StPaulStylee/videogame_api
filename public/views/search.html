@@ -2,8 +2,8 @@
   <input type="search" ng-model="api.search" />
   <button type="submit">Search</button>
 </form>
-<section id="results">
-  <ul id="resultsList" ng-repeat="game in api.searchResults">
+<section id="results_list">
+  <ul class="results" ng-repeat="game in api.searchResults">
     <li>
       {{ game.name }}
     </li>
