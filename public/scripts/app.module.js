@@ -1,1 +1,1 @@
-angular.module('videoGameApp', ['ngRoute']);
+angular.module('videoGameApp', ['ngRoute', 'ui.bootstrap']);
