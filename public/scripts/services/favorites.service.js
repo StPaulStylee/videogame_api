@@ -3,8 +3,20 @@ angular.module('videoGameApp')
 
 function FavoriteService($http) {
   var service = this;
+  service.storedFavorite = {};
+
+// This receives data from the modalInstance and when called, returns the data
+// to the addFavorite function so it then can be routed to the DB
+  service.favoriteDataStorage = function(data) {
+     service.storedFavorite = data;
+  }
+
+  service.getStoredFavorite = function() {
+    return service.storedFavorite;
+  }
 
   service.addFavorite = function(data) {
+    console.log('From service: ', data);
     service.newFavorite = {
       title: data.name,
       description: data.deck,
@@ -30,18 +42,26 @@ function FavoriteService($http) {
     // and sent to the database
     service.getPlatforms = function(gameInfo) {
       service.platforms = [];
-      for(var i = 0; i < gameInfo.platforms.length; i++) {
-        service.platforms.push(gameInfo.platforms[i].name);
+      if (gameInfo.platforms != null){
+        for(var i = 0; i < gameInfo.platforms.length; i++) {
+          service.platforms.push(gameInfo.platforms[i].name);
+        }
+        return service.platforms;
+      } else {
+        return null;
       }
-      return service.platforms;
     }
 
     service.getRating = function(gameInfo) {
       service.ratings = [];
-      for(var i = 0; i < gameInfo.original_game_rating.length; i++) {
-        service.ratings.push(gameInfo.original_game_rating[i].name);
+      if (gameInfo.original_game_rating != null) {
+        for(var i = 0; i < gameInfo.original_game_rating.length; i++) {
+          service.ratings.push(gameInfo.original_game_rating[i].name);
+        }
+        return service.ratings;
+      } else {
+        return null;
       }
-      return service.ratings;
     }
 
   } // End of service
