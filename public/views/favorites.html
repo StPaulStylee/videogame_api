@@ -19,6 +19,9 @@
     <li>
       <img ng-src="{{ game.game_image }}" alt="{{ game.title }} image" />
     </li>
+    <li>
+      {{ game.favorite_comment }}
+    </li>
     <button type="button" ng-click="favorite.removeFavorite()">Remove</button>
   </ul>
 </section>
