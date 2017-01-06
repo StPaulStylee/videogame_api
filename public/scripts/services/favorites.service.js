@@ -4,15 +4,25 @@ angular.module('videoGameApp')
 function FavoriteService($http) {
   var service = this;
   service.storedFavorite = {};
+  service.favoriteId = {};
 
 // This receives data from the modalInstance and when called, returns the data
 // to the addFavorite function so it then can be routed to the DB
-  service.favoriteDataStorage = function(data) {
-     service.storedFavorite = data;
+  service.favoriteDataStorage = function(favoriteObject) {
+     service.storedFavorite = favoriteObject;
   }
 
   service.getStoredFavorite = function() {
     return service.storedFavorite;
+  }
+  // This receives data from the modalInstance and when called, returns the data
+  // to the confirmRemoval function so it then can be routed to the DB
+  service.favoriteToDelete = function(gameId) {
+    service.favoriteId = gameId;
+  }
+
+  service.getFavoriteId = function() {
+    return service.favoriteId;
   }
 
   service.addFavorite = function(data) {
@@ -30,6 +40,14 @@ function FavoriteService($http) {
         return response;
       });
     };
+
+  service.removeFavorite = function(favoriteId) {
+    return $http.delete('/favorites/' + favoriteId).then(function(response){
+      return response;
+    });
+  };
+
+
 
     service.getFavorites = function() {
       return $http.get('/favorites')

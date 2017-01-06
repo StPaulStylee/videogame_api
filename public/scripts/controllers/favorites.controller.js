@@ -17,7 +17,6 @@ function favoritesController(favServ, $uibModal) {
     });
   };
 
-
   ctrl.getFavorites = function() {
     ctrl.favoritesList;
     favServ.getFavorites().then(function(favorites){
@@ -27,7 +26,10 @@ function favoritesController(favServ, $uibModal) {
   };
 
   ctrl.removeFavorite = function() {
-    console.log('clicked');
+    ctrl.favoriteToRemove = favServ.getFavoriteId();
+    favServ.removeFavorite(ctrl.favoriteToRemove).then(function(response){
+      console.log('Favorite Deleted!', response);
+    })
   };
 
   ctrl.openFavoritesModal = function(data) {
@@ -39,7 +41,20 @@ function favoritesController(favServ, $uibModal) {
     });
     // I am not sure what I need to do here to get rid of "angular.js:14324 Possibly unhandled rejection: backdrop click" error
     //modalInstance.dismiss();
-  }
+  };
+
+  ctrl.openRemoveFavoriteModal = function(data) {
+    // send data to service to be retrieved from confirmRemvoval function
+    favServ.favoriteToDelete(data);
+    var modalInstance = $uibModal.open({
+      templateUrl: 'views/confirmRemoveModal.html',
+      controller: 'favoritesController as favorite'
+    });
+  };
+
+  ctrl.openEditCommentsModal = function(data) {
+    console.log(data);
+  };
   // On load of favorites partial, get all favorites
   ctrl.getFavorites();
 

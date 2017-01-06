@@ -21,7 +21,8 @@
     </li>
     <li>
       {{ game.favorite_comment }}
+      <button type="button" ng-click="favorite.openEditCommentsModal(game.favorite_comment)">Edit</button>
     </li>
-    <button type="button" ng-click="favorite.removeFavorite()">Remove</button>
+    <button type="button" ng-click="favorite.openRemoveFavoriteModal(game.id)">Remove</button>
   </ul>
 </section>
