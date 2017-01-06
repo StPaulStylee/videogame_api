@@ -1,2 +1,3 @@
 <h3>Add a Favorite</h3>
-<button type="button" ng-click="favorite.addFavorite(game)">Add</button> 
+<input type="text" id="favorite-comment" ng-model="favorite.comment" placeholder="Tell us why you love this game..." />
+<button type="button" ng-click="favorite.addFavorite(favorite.comment)">Add</button>

@@ -10,8 +10,8 @@ router.post('/', function(req, res){
         res.sendStatus(500);
         return;
       }
-      client.query('INSERT INTO favorites (title, description, release_date, platforms, game_rating, game_image) VALUES ($1, $2, $3, $4, $5, $6) returning *',
-                  [req.body.title, req.body.description, req.body.release_date, req.body.platforms, req.body.game_rating, req.body.game_image],
+      client.query('INSERT INTO favorites (title, description, release_date, platforms, game_rating, game_image, favorite_comment) VALUES ($1, $2, $3, $4, $5, $6, $7) returning *',
+                  [req.body.title, req.body.description, req.body.release_date, req.body.platforms, req.body.game_rating, req.body.game_image, req.body.favorite_comment],
                   function (err, result) {
                     if (err) {
                       console.log('Issue quering the DB:', err);

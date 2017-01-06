@@ -6,9 +6,11 @@ function favoritesController(favServ, $uibModal) {
 
   var ctrl = this;
 
-  ctrl.addFavorite = function() {
+  ctrl.addFavorite = function(comment) {
+    console.log(comment);
     //retrieve data from service
-    ctrl.favoriteToAdd = favServ.getStoredFavorite()
+    ctrl.favoriteToAdd = favServ.getStoredFavorite();
+    ctrl.favoriteToAdd.favorite_comment = comment;
       // console.log(ctrl.favoriteToAdd);
     favServ.addFavorite(ctrl.favoriteToAdd).then(function(response){
       console.log('Favorite Added!', response);
@@ -35,6 +37,8 @@ function favoritesController(favServ, $uibModal) {
       templateUrl: 'views/favoritesModal.html',
       controller: 'favoritesController as favorite'
     });
+    // I am not sure what I need to do here to get rid of "angular.js:14324 Possibly unhandled rejection: backdrop click" error
+    //modalInstance.dismiss();
   }
   // On load of favorites partial, get all favorites
   ctrl.getFavorites();

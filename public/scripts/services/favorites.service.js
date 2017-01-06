@@ -16,14 +16,14 @@ function FavoriteService($http) {
   }
 
   service.addFavorite = function(data) {
-    console.log('From service: ', data);
     service.newFavorite = {
       title: data.name,
       description: data.deck,
       release_date: data.original_release_date,
       platforms: service.getPlatforms(data),
       game_rating: service.getRating(data),
-      game_image: data.image.thumb_url
+      game_image: data.image.thumb_url,
+      favorite_comment: data.favorite_comment
     };
     return $http.post('/favorites', service.newFavorite)
       .then(function(response){
