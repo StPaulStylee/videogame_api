@@ -51,11 +51,18 @@ function favoritesController(favServ, $uibModal) {
 
   ctrl.openEditFavoritesModal = function(gameObject) {
     favServ.favoriteDataStorage(gameObject);
+    ctrl.commentToDisplay = ctrl.getComment();
+    console.log(ctrl.commentToDisplay);
     var modalInstance = $uibModal.open({
       templateUrl: 'views/editFavoritesModal.html',
       controller: 'favoritesController as favorite'
     });
   };
+
+  ctrl.getComment = function() {
+    // console.log('From getComment function: ', favServ.favoriteComment);
+    return favServ.favoriteComment;
+  }
   // On load of favorites partial, get all favorites
   ctrl.getFavorites();
 

@@ -5,12 +5,14 @@ function FavoriteService($http) {
   var service = this;
   service.storedFavorite = {};
   service.favoriteId = {};
+  service.favoriteComment = {};
 
 // This receives data from the modalInstance and when called, returns the data
 // to the addFavorite function so it then can be routed to the DB
   service.favoriteDataStorage = function(favoriteObject) {
      service.storedFavorite = favoriteObject;
      service.favoriteId = favoriteObject.id;
+     service.favoriteComment = favoriteObject.favorite_comment;
   }
 
   service.getStoredFavorite = function() {
