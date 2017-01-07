@@ -10,6 +10,7 @@ function FavoriteService($http) {
 // to the addFavorite function so it then can be routed to the DB
   service.favoriteDataStorage = function(favoriteObject) {
      service.storedFavorite = favoriteObject;
+     service.favoriteId = favoriteObject.id;
   }
 
   service.getStoredFavorite = function() {
@@ -17,9 +18,9 @@ function FavoriteService($http) {
   }
   // This receives data from the modalInstance and when called, returns the data
   // to the confirmRemoval function so it then can be routed to the DB
-  service.favoriteToDelete = function(gameId) {
-    service.favoriteId = gameId;
-  }
+  // service.favoriteToDelete = function(gameId) {
+  //   service.favoriteId = gameId;
+  // }
 
   service.getFavoriteId = function() {
     return service.favoriteId;

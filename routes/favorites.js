@@ -45,7 +45,7 @@ router.get('/', function(req, res){
         });
     }
     finally{
-      done();
+    done();
     }
   });
 });
@@ -71,7 +71,7 @@ router.delete('/:id', function(req, res){
         });
     }
     finally{
-      done();
+    done();
     }
   });
 });
