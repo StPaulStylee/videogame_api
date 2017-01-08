@@ -76,5 +76,35 @@ router.delete('/:id', function(req, res){
   });
 });
 
+router.put('/:id', function(req, res){
+  var id = req.params.id;
+  var comment = req.body.favorite_comment;
+  console.log(req.params);
+  console.log(req.body);
+  pool.connect(function(err, client, done){
+    try {
+      if(err) {
+        console.log('Error connecting to the DB: ', err);
+        res.sendStatus(500);
+        return;
+      }
+      client.query('UPDATE favorites SET favorite_comment=$1 WHERE id=$2 RETURNING *;', [comment, id],
+        function(err, result){
+          if(err){
+            console.log('Error querying the DB: ', err);
+            res.sendStatus(500);
+            return;
+          }
+          res.send(result.rows);
+        });
+    }
+    finally{
+    done();
+    }
+  });
+});
+
+
+
 
 module.exports = router;

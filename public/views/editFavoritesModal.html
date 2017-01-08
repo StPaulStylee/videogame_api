@@ -1,7 +1,7 @@
 <h3>Edit This Favorite!</h3>
 
-<textarea ng-disabled="editFavorite.commentDisabled">{{ editFavorite.getComment() }}</textarea>
+<textarea ng-disabled="editFavorite.commentDisabled" ng-model="editFavorite.comment" ng-value="editFavorite.getComment()"></textarea>
 <button type="button" ng-hide="editFavorite.editClicked" ng-click="editFavorite.enableCommentEdit()">Edit Comment</button>
-<button type="button" ng-show="editFavorite.editClicked" ng-click="editFavorite.submitEdit">Submit Edit</button>
+<button type="button" ng-show="editFavorite.editClicked" ng-click="editFavorite.submitEdit(editFavorite.comment)">Submit Edit</button>
 <button type="button" ng-click="editFavorite.removeFavorite()">Remove</button>
 <button type="button" ng-click="editFavorite.closeModal()">Cancel</button>

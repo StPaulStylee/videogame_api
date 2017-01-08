@@ -12,7 +12,7 @@ function FavoriteService($http) {
   service.favoriteDataStorage = function(favoriteObject) {
      service.storedFavorite = favoriteObject;
      service.storedFavorite.id = favoriteObject.id;
-     service.storedFavorite.favoriteComment = favoriteObject.favorite_comment;
+     service.storedFavorite.favorite_comment = favoriteObject.favorite_comment;
   }
 
   service.getStoredFavorite = function() {
@@ -34,6 +34,14 @@ function FavoriteService($http) {
         return response;
       });
     };
+
+  service.submitEdit = function(comment){
+    console.log('From service submitEdit: ', service.storedFavorite, comment);
+    service.storedFavorite.favorite_comment = comment;
+    return $http.put('/favorites/' + service.storedFavorite.id, service.storedFavorite).then(function(response){
+      return response;
+    });
+  }
 
   service.removeFavorite = function(favoriteId) {
     return $http.delete('/favorites/' + favoriteId).then(function(response){

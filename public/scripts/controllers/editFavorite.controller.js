@@ -4,8 +4,14 @@ angular.module('videoGameApp')
 function EditFavoriteController (favServ, $uibModalInstance) {
 
   var ctrl = this;
-  // ctrl.commentDisabled = true;
-  // ctrl.editClicked = false;
+
+  ctrl.submitEdit = function (comment) {
+    console.log("New Comment: ", comment);
+    favServ.submitEdit(comment).then(function(response){
+      ctrl.closeModal();
+      console.log('Comment Updated!', response);
+    });
+  };
 
   ctrl.removeFavorite = function() {
     // ctrl.favoriteToRemove = favServ.getFavoriteId();
@@ -26,7 +32,7 @@ function EditFavoriteController (favServ, $uibModalInstance) {
   };
 
   ctrl.getComment = function() {
-    return favServ.storedFavorite.favoriteComment;
+    return favServ.storedFavorite.favorite_comment;
   }
 
   ctrl.closeModal = function() {
