@@ -10,7 +10,6 @@ function favoritesController(favServ, $uibModal) {
     ctrl.favoritesList;
     favServ.getFavorites().then(function(favorites){
       ctrl.favoritesList = favorites.data;
-    //  console.log(ctrl.favoritesList);
     });
   };
 
@@ -29,7 +28,7 @@ function favoritesController(favServ, $uibModal) {
       templateUrl: 'views/editFavoritesModal.html',
       controller: 'EditFavoriteController as editFavorite'
     });
-    modalInstance.result.then(ctrl.getFavorites());
+    modalInstance.result.then(ctrl.getFavorites);
   };
 
   ctrl.getFavorites();
