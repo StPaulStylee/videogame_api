@@ -4,6 +4,8 @@ angular.module('videoGameApp')
 function EditFavoriteController (favServ, $uibModalInstance) {
 
   var ctrl = this;
+  // ctrl.commentDisabled = true;
+  // ctrl.editClicked = false;
 
   ctrl.removeFavorite = function() {
     // ctrl.favoriteToRemove = favServ.getFavoriteId();
@@ -13,6 +15,16 @@ function EditFavoriteController (favServ, $uibModalInstance) {
     });
   };
 
+  ctrl.disableCommentEdit = function() {
+    ctrl.commentDisabled = true;
+    ctrl.editClicked = false;
+  }
+
+  ctrl.enableCommentEdit = function() {
+    ctrl.editClicked = true;
+    ctrl.commentDisabled = false;
+  };
+
   ctrl.getComment = function() {
     return favServ.storedFavorite.favoriteComment;
   }
@@ -20,4 +32,5 @@ function EditFavoriteController (favServ, $uibModalInstance) {
   ctrl.closeModal = function() {
     $uibModalInstance.close();
   }
+  ctrl.disableCommentEdit();
 }
