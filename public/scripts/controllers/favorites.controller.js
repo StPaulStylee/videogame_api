@@ -23,31 +23,15 @@ function favoritesController(favServ, $uibModal) {
     });
   };
 
-  // ctrl.openRemoveFavoriteModal = function(data) {
-  //   var modalInstance = $uibModal.open({
-  //     templateUrl: 'views/confirmRemoveModal.html',
-  //     controller: 'favoritesController as favorite'
-  //   });
-  // };
-
   ctrl.openEditFavoritesModal = function(gameObject) {
     favServ.favoriteDataStorage(gameObject);
     var modalInstance = $uibModal.open({
       templateUrl: 'views/editFavoritesModal.html',
       controller: 'EditFavoriteController as editFavorite'
     });
+    modalInstance.result.then(ctrl.getFavorites());
   };
 
-  ctrl.getComment = function() {
-    // console.log('From getComment function: ', favServ.favoriteComment);
-    return favServ.storedFavorite.favoriteComment;
-  }
-
-  // Close modal when cancel button is clicked
-  // ctrl.closeModal = function() {
-  //   ctrl.closeModalBoolean = true;
-  // }
-  // On load of favorites partial, get all favorites
   ctrl.getFavorites();
 
 } // end of favoritesController
