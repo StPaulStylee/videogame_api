@@ -1,0 +1,10 @@
+<h3>Add Game to Wishlist</h3>
+
+  <select name="Platform" ng-model="newWish.platform">
+
+    <option ng-repeat="platform in newWish.wishToAdd.platforms" value="{{ platform.name }}">
+      {{ platform.name }}
+    </option>
+  </select>
+  <button type="button" ng-click="newWish.addWishlistItem(newWish.platform)">Add</button>
+  <button type="button" ng-click="newWish.closeModal()">Cancel</button>

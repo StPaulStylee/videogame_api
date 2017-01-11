@@ -31,10 +31,6 @@ function favoritesController(favServ, $uibModal) {
     modalInstance.result.then(ctrl.getFavorites);
   };
 
-  ctrl.openWishListModal = function(gameObject) {
-
-  }
-
   ctrl.getFavorites();
 
 } // end of favoritesController

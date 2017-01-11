@@ -1,8 +1,8 @@
 angular.module('videoGameApp')
-       .controller('rankingsController', rankingsController);
+       .controller('RankingsController', RankingsController);
 
-function rankingsController() {
-  console.log('rankingsController Loaded');
+function RankingsController() {
+  console.log('RankingsController Loaded');
 
   var ctrl = this;
 }// end of rankingsController

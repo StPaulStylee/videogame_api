@@ -8,10 +8,10 @@ angular.module('videoGameApp')
            controller: 'favoritesController as favorite'
          }).when('/wishlist', {
            templateUrl: 'views/wishlist.html',
-           controller: 'wishlistController as wish'
+           controller: 'WishlistController as wish'
          }).when('/your_rankings', {
            templateUrl: 'views/your_rankings.html',
-           controller: 'rankingsController as rank'
+           controller: 'RankingsController as rank'
          }).otherwise({
            redirectTo: '/search'
          });

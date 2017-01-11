@@ -12,6 +12,7 @@ function NewFavoriteController(favServ, $uibModalInstance) {
       ctrl.favoriteToAdd.favorite_comment = comment;
       favServ.addFavorite(ctrl.favoriteToAdd).then(function(response){
         console.log('Favorite Added!', response);
+        ctrl.closeModal();
       });
     };
 

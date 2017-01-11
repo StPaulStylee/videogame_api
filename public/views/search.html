@@ -26,7 +26,7 @@
       <img ng-src="{{ game.image.small_url }}" />
     </li>
     <button type="button" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)">Add to Favorites</button>
-    <button type="button" value="game">Add to Wishlist</button>
+    <button type="button" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)">Add to Wishlist</button>
     <!-- Add ranking system here -->
   </ul>
 </section>
