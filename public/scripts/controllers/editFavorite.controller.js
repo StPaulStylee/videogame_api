@@ -15,7 +15,7 @@ function EditFavoriteController (favServ, $uibModalInstance) {
 
   ctrl.removeFavorite = function() {
     // ctrl.favoriteToRemove = favServ.getFavoriteId();
-    favServ.removeFavorite(favServ.storedFavorite.id).then(function(response){
+    favServ.removeFavorite(favServ.storedGame.id).then(function(response){
       ctrl.closeModal();
       console.log('Favorite Deleted!', response);
     });
@@ -32,7 +32,7 @@ function EditFavoriteController (favServ, $uibModalInstance) {
   };
 
   ctrl.getComment = function() {
-    return favServ.storedFavorite.favorite_comment;
+    return favServ.storedGame.favorite_comment;
   }
 
   ctrl.closeModal = function() {

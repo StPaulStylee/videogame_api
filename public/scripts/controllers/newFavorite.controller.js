@@ -8,7 +8,7 @@ function NewFavoriteController(favServ, $uibModalInstance) {
     ctrl.addFavorite = function(comment) {
       console.log(comment);
       //retrieve data from service
-      ctrl.favoriteToAdd = favServ.getStoredFavorite();
+      ctrl.favoriteToAdd = favServ.getStoredGame();
       ctrl.favoriteToAdd.favorite_comment = comment;
       favServ.addFavorite(ctrl.favoriteToAdd).then(function(response){
         console.log('Favorite Added!', response);

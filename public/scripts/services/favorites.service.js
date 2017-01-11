@@ -3,20 +3,20 @@ angular.module('videoGameApp')
 
 function FavoriteService($http) {
   var service = this;
-  service.storedFavorite = {};
+  service.storedGame = {};
 
 // This receives data from the modalInstance and when called, returns the data
 // to the addFavorite function so it then can be routed to the DB
 // It also created object properties that can be accesed by by other controller
 // functions
-  service.favoriteDataStorage = function(favoriteObject) {
-     service.storedFavorite = favoriteObject;
-     service.storedFavorite.id = favoriteObject.id;
-     service.storedFavorite.favorite_comment = favoriteObject.favorite_comment;
+  service.gameDataStorage = function(gameObject) {
+     service.storedGame = gameObject;
+     service.storedGame.id = gameObject.id;
+     service.storedGame.favorite_comment = gameObject.favorite_comment;
   }
 
-  service.getStoredFavorite = function() {
-    return service.storedFavorite;
+  service.getStoredGame = function() {
+    return service.storedGame;
   }
 
   service.addFavorite = function(data) {
@@ -36,9 +36,9 @@ function FavoriteService($http) {
     };
 
   service.submitEdit = function(comment){
-    console.log('From service submitEdit: ', service.storedFavorite, comment);
-    service.storedFavorite.favorite_comment = comment;
-    return $http.put('/favorites/' + service.storedFavorite.id, service.storedFavorite).then(function(response){
+    console.log('From service submitEdit: ', service.storedGame, comment);
+    service.storedGame.favorite_comment = comment;
+    return $http.put('/favorites/' + service.storedGame.id, service.storedGame).then(function(response){
       return response;
     });
   }
