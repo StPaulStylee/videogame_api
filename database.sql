@@ -20,3 +20,7 @@ id SERIAL PRIMARY KEY,
   description varchar(250),
   platforms varchar (250)
 );
+
+/*4. Add new column to wishlist table */
+ALTER TABLE wishlist
+ADD game_image varchar(120);
