@@ -27,6 +27,14 @@ function WishlistService($http) {
       });
     };
 
+  service.getWishlist = function() {
+    return $http.get('/wishlist')
+      .then(function(wishes){
+        return wishes;
+      });
+  };
+
+
 
 
 

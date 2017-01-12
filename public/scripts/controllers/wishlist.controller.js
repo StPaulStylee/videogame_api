@@ -6,14 +6,22 @@ function WishlistController(wishServ, $uibModal) {
 
   var ctrl = this;
 
+  ctrl.getWishlist = function() {
+    ctrl.wishlistItems;
+    wishServ.getWishlist().then(function(wishes){
+      ctrl.wishlistItems = wishes.data;
+      console.log(ctrl.wishlistItems);
+    });
+  };
+
   ctrl.openWishlistModal = function(gameObject) {
     wishServ.gameDataStorage(gameObject);
     var modalInstance = $uibModal.open({
       templateUrl: 'views/addWishlistModal.html',
       controller: 'NewWishlistController as newWish'
     });
-    //after return, call get wishlist
+    modalInstance.result.then(ctrl.getWishlist);
   };
 
-  //get Wishlist function
+  ctrl.getWishlist();
 }// end of wishlistController

@@ -1,1 +1,18 @@
 <h3>Your Wishlist</h3>
+<section id="wishlist">
+  <ul class="wishes" ng-repeat="game in wish.wishlistItems">
+    <li>
+      {{ game.title }}
+    </li>
+    <li>
+      {{ game.description }}
+    </li>
+    <li>
+      {{ game.platforms }}
+    </li>
+    <li>
+      <img ng-src="{{ game.game_image }}" alt="{{ game.title }} image" />
+    </li>
+      <button type="button" ng-click="wish.openRemoveWishlistModal(game)">Remove</button>
+  </ul>
+</section>

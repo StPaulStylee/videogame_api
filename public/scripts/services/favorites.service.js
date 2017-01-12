@@ -49,12 +49,12 @@ function FavoriteService($http) {
     });
   };
 
-    service.getFavorites = function() {
-      return $http.get('/favorites')
-        .then(function(favorites){
-          return favorites;
-        });
-    };
+  service.getFavorites = function() {
+    return $http.get('/favorites')
+      .then(function(favorites){
+        return favorites;
+      });
+  };
 
     // service.getPlatforms allows just the name to be pulled from the platform object
     // and sent to the database
