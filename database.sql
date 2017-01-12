@@ -12,3 +12,11 @@ id SERIAL PRIMARY KEY,
 /*2. Add new column to favorites table */
 ALTER TABLE favorites
 ADD favorite_comment varchar(500);
+
+/*3. Create Wishlist Table */
+CREATE TABLE wishlist (
+id SERIAL PRIMARY KEY,
+  title varchar(120) NOT NULL,
+  description varchar(250),
+  platforms varchar (250)
+);
