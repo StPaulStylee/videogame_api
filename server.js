@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const favorites = require('./routes/favorites');
+const wishlist = require('./routes/wishlist');
 // const router = require('router'); Router placed on this line
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.use('/favorites', favorites);
+app.use('/wishlist', wishlist);
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/views/index.html'));
