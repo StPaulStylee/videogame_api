@@ -20,6 +20,7 @@ function favoritesController(favServ, $uibModal) {
       templateUrl: 'views/addFavoritesModal.html',
       controller: 'NewFavoriteController as newFavorite'
     });
+    modalInstance.result.then(ctrl.getFavorites);
   };
 
   ctrl.openEditFavoritesModal = function(gameObject) {

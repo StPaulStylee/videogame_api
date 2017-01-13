@@ -34,6 +34,12 @@ function WishlistService($http) {
       });
   };
 
+  service.removeWish = function(wishId) {
+    return $http.delete('/wishlist/' + wishId).then(function(response){
+      return response;
+    });
+  };
+
 
 
 

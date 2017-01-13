@@ -50,6 +50,32 @@ router.get('/', function(req, res){
   });
 });
 
+router.delete('/:id', function(req, res){
+  var id = req.params.id;
+  console.log(req.params);
+  pool.connect(function(err, client, done){
+    try {
+      if(err) {
+        console.log('Error connecting to the DB: ', err);
+        res.sendStatus(500);
+        return;
+      }
+      client.query('DELETE FROM wishlist WHERE id=$1;', [id],
+        function(err, result){
+          if(err){
+            console.log('Error querying the DB: ', err);
+            res.sendStatus(500);
+            return;
+          }
+          res.sendStatus(204);
+        });
+    }
+    finally{
+    done();
+    }
+  });
+});
+
 
 
 
