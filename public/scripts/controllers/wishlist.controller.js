@@ -35,5 +35,4 @@ function WishlistController(wishServ, $uibModal) {
 
   ctrl.getWishlist();
 
-  //make delete wishes functionality
 }// end of wishlistController
