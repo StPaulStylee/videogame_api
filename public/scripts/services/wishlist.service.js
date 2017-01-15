@@ -19,7 +19,8 @@ function WishlistService($http) {
       title: wishObjectToSend.title,
       description: wishObjectToSend.description,
       platform: wishObjectToSend.platform,
-      game_image: wishObjectToSend.game_image
+      game_image: wishObjectToSend.game_image,
+      site_detail_url: wishObjectToSend.site_detail_url
     };
     return $http.post('/wishlist', service.newWish)
       .then(function(response){

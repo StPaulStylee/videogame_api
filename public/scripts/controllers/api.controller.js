@@ -6,9 +6,11 @@ function videoGameAPIController(vgAPI) {
   //ctrl.searchResults = [];
   console.log('videoGameAPIController Loaded');
 
-  ctrl.searchAPI = function(searchTerm, searchLocation) {
+// When expanding the search functionality, you'll need to add a "search location" or
+// something like that as a second paramerter
+  ctrl.searchAPI = function(searchTerm) {
     ctrl.searchResults;
-    vgAPI.searchAPI(searchTerm, searchLocation).then(function(results){
+    vgAPI.searchAPI(searchTerm).then(function(results){
       console.log('Results from search: ', results);
       ctrl.searchResults = results.data.results;
       console.log('Saved object: ', ctrl.searchResults);

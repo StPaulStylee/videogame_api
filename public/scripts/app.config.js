@@ -9,9 +9,9 @@ angular.module('videoGameApp')
          }).when('/wishlist', {
            templateUrl: 'views/wishlist.html',
            controller: 'WishlistController as wish'
-         }).when('/your_rankings', {
-           templateUrl: 'views/your_rankings.html',
-           controller: 'RankingsController as rank'
+         }).when('/about', {
+           templateUrl: 'views/about.html',
+           controller: 'AboutController as about'
          }).otherwise({
            redirectTo: '/search'
          });

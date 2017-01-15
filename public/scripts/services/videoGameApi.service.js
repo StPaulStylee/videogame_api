@@ -7,13 +7,15 @@ function VideoGameAPIService ($http) {
 
   var service = this;
   // Uses a search query to find matching game info
-  service.searchAPI = function (query, queryLocation) {
+  // in future I will put resources characteristic as a function param so
+  // it will be able to accomplish more dynamic searches
+  service.searchAPI = function (query) {
     return $http.get(API + '/search', {
       params: {
         api_key: key,
         format: 'json',
         query: query,
-        resources: queryLocation,
+        resources: 'game',
         limit: 30,
       }
     }).then(function(response){

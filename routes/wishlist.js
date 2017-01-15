@@ -10,8 +10,8 @@ router.post('/', function(req, res){
         res.sendStatus(500);
         return;
       }
-      client.query('INSERT INTO wishlist (title, description, platforms, game_image) VALUES ($1, $2, $3, $4) returning *',
-                  [req.body.title, req.body.description, req.body.platform, req.body.game_image],
+      client.query('INSERT INTO wishlist (title, description, platforms, game_image, site_detail_url) VALUES ($1, $2, $3, $4, $5) returning *',
+                  [req.body.title, req.body.description, req.body.platform, req.body.game_image, req.body.site_detail_url],
                   function (err, result) {
                     if (err) {
                       console.log('Issue quering the DB:', err);

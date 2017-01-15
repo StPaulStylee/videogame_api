@@ -27,7 +27,8 @@ function FavoriteService($http) {
       platforms: service.getPlatforms(data),
       game_rating: service.getRating(data),
       game_image: data.image.thumb_url,
-      favorite_comment: data.favorite_comment
+      favorite_comment: data.favorite_comment,
+      site_detail_url: data.site_detail_url
     };
     return $http.post('/favorites', service.newFavorite)
       .then(function(response){

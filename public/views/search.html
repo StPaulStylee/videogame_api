@@ -1,61 +1,68 @@
-<form ng-submit="api.searchAPI(api.search, api.location)">
-  <select name="query-location" ng-model="api.location">
-    <option value="game">
-      <span>Game Name</span>
-    </option>
-    <option value="franchise">
-      <span>Franchise Name</span>
-    </option>
-    <option value="character">
-      <span>Character Name</span>
-    </option>
-    <option value="concept">
-      <span>Game Concept</span>
-    </option>
-    <option value="object">
-      <span>In Game Objects</span>
-    </option>
-    <option value="location">
-      <span>Location</span>
-    </option>
-    <option value="person">
-      <span>Person</span>
-    </option>
-    <option value="company">
-      <span>Company Name</span>
-    </option>
-    <option value="video">
-      <span>Video</span>
-    </option>
-  </select>
-  <input type="search" ng-model="api.search" />
-  <button type="submit">Search</button>
-</form>
-<section id="results_list">
-  <ul class="results" ng-repeat="game in api.searchResults">
-    <li>
-      {{ game.name }}
-    </li>
-    <li>
-      {{ game.deck }}
-    </li>
-    <li>
-      {{ game.original_release_date }}
-    </li>
-    <ol>
-      <li ng-repeat="platforms in game.platforms">
-          {{ platforms.name }}
+<div class="container">
+  <div class="row">
+      <form ng-submit="api.searchAPI(api.search, api.location)">
+        <!-- The <select> below will be used in future when I implement broader
+              search parameters. -->
+        <!-- <select name="query-location" ng-model="api.location">
+          <option value="game">
+            <span>Game Name</span>
+          </option>
+          <option value="franchise">
+            <span>Franchise Name</span>
+          </option>
+          <option value="character">
+            <span>Character Name</span>
+          </option>
+          <option value="concept">
+            <span>Game Concept</span>
+          </option>
+          <option value="object">
+            <span>In Game Objects</span>
+          </option>
+          <option value="location">
+            <span>Location</span>
+          </option>
+          <option value="person">
+            <span>Person</span>
+          </option>
+          <option value="company">
+            <span>Company Name</span>
+          </option>
+          <option value="video">
+            <span>Video</span>
+          </option>
+        </select> -->
+        <input class="col-md-10"  type="search" ng-model="api.search" />
+        <button class="col-md-offset-1 col-md-1" type="submit">Search</button>
+      </form>
+  </div>
+
+  <section id="results_list">
+    <ul class="results" ng-repeat="game in api.searchResults">
+      <li>
+        {{ game.name }}
       </li>
-    </ol>
-    <ol>
-      <li ng-repeat="ratings in game.original_game_rating">
-          {{ ratings.name }}
+      <li>
+        {{ game.deck }}
       </li>
-    </ol>
-      <img ng-src="{{ game.image.small_url }}" />
-    </li>
-    <button type="button" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)">Add to Favorites</button>
-    <button type="button" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)">Add to Wishlist</button>
-    <!-- Add ranking system here -->
-  </ul>
-</section>
+      <li>
+        {{ game.original_release_date }}
+      </li>
+      <ol>
+        <li ng-repeat="platforms in game.platforms">
+            {{ platforms.name }}
+        </li>
+      </ol>
+      <ol>
+        <li ng-repeat="ratings in game.original_game_rating">
+            {{ ratings.name }}
+        </li>
+      </ol>
+        <img ng-src="{{ game.image.small_url }}" />
+      </li>
+      <button type="button" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)">Add to Favorites</button>
+      <button type="button" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)">Add to Wishlist</button>
+      <!-- Add ranking system here -->
+    </ul>
+  </section>
+</div>
