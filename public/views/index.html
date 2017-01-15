@@ -26,26 +26,30 @@
     <!-- Stylesheets and fonts -->
     <link rel="stylesheet" href="/assets/vendors/bootstrap.min.css" />
     <link rel="stylesheet" href="/assets/vendors/ui-bootstrap-csp.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
 
     <base href="/" />
   </head>
   <body>
-    <nav>
-      <ul id="navigation-bar">
-        <li>
-          <a href="/search">Search</a>
-        </li>
-        <li>
-          <a href="/favorites">Favorites</a>
-        </li>
-        <li>
-          <a href="/wishlist">Wishlist</a>
-        </li>
-        <li>
-          <a href="/about">About</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="container">
+      <nav>
+        <ul class="row" id="navigation-bar">
+          <li class="col-md-3">
+            <a href="/search">Search</a>
+          </li>
+          <li class="col-md-3">
+            <a href="/favorites">Favorites</a>
+          </li>
+          <li class="col-md-3">
+            <a href="/wishlist">Wishlist</a>
+          </li>
+          <li class="col-md-3">
+            <a href="/about">About</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
 
     <ng-view>
 

@@ -32,37 +32,31 @@
             <span>Video</span>
           </option>
         </select> -->
-        <input class="col-md-10"  type="search" ng-model="api.search" />
-        <button class="col-md-offset-1 col-md-1" type="submit">Search</button>
+        <input class="col-md-11"  type="search" ng-model="api.search" />
+        <button class="col-md-1" type="submit">Search</button>
       </form>
   </div>
 
-  <section id="results_list">
-    <ul class="results" ng-repeat="game in api.searchResults">
-      <li>
-        {{ game.name }}
-      </li>
-      <li>
-        {{ game.deck }}
-      </li>
-      <li>
-        {{ game.original_release_date }}
-      </li>
-      <ol>
-        <li ng-repeat="platforms in game.platforms">
-            {{ platforms.name }}
-        </li>
-      </ol>
-      <ol>
-        <li ng-repeat="ratings in game.original_game_rating">
-            {{ ratings.name }}
-        </li>
-      </ol>
-        <img ng-src="{{ game.image.small_url }}" />
-      </li>
-      <button type="button" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)">Add to Favorites</button>
-      <button type="button" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)">Add to Wishlist</button>
-      <!-- Add ranking system here -->
-    </ul>
-  </section>
+
+    <section id="results_list">
+      <div class="container">
+
+      <div class="row" ng-repeat-start="game in api.searchResults">
+        <div class="col-md-4" >
+          <img class="search-image" ng-src="{{ game.image.small_url }}" />
+          <h4>{{ game.name }} </h4>
+          <p>{{ game.deck }} <span><a target="_blank" href="{{ game.site_detail_url }}">More details...</a> </span></p>
+          <p class="release-date">Released: {{ game.original_release_date }}</p>
+          <p>Platforms: <span ng-repeat="platforms in game.platforms">{{ platforms.name }}, </span></p>
+          <p>Rated: <span ng-repeat="ratings in game.original_game_rating">{{ ratings.name }}, </span></p>
+          <div class="row">
+            <button class="col-md-6" type="button" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)">Add to Favorites</button>
+            <button class="col-md-6" type="button" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)">Add to Wishlist</button>
+          </div>
+        </div>
+
+        <!-- Add ranking system here -->
+      </div>
+  </div>
+
 </div>
