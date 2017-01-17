@@ -41,22 +41,21 @@
     <section id="results_list">
       <div class="container">
 
-      <div class="row" ng-repeat-start="game in api.searchResults">
+      <div class="row search-results" ng-repeat="game in api.searchResults">
         <div class="col-md-4" >
           <img class="search-image" ng-src="{{ game.image.small_url }}" />
+        </div>
+        <div class="col-md-8 search-content">
           <h4>{{ game.name }} </h4>
           <p>{{ game.deck }} <span><a target="_blank" href="{{ game.site_detail_url }}">More details...</a> </span></p>
           <p class="release-date">Released: {{ game.original_release_date }}</p>
           <p>Platforms: <span ng-repeat="platforms in game.platforms">{{ platforms.name }}, </span></p>
           <p>Rated: <span ng-repeat="ratings in game.original_game_rating">{{ ratings.name }}, </span></p>
-          <div class="row">
-            <button class="col-md-6" type="button" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)">Add to Favorites</button>
-            <button class="col-md-6" type="button" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)">Add to Wishlist</button>
-          </div>
+          <button class="col-md-6" type="button" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)">Add to Favorites</button>
+          <button class="col-md-6" type="button" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)">Add to Wishlist</button>
         </div>
+      </div>
 
         <!-- Add ranking system here -->
       </div>
   </div>
-
-</div>
