@@ -31,24 +31,26 @@
     <base href="/" />
   </head>
   <body>
-    <div class="container">
-      <nav>
-        <ul class="row" id="navigation-bar">
-          <li class="col-md-3">
+    <nav class="navbar nav-default">
+      <div class="container">
+        <a class="navbar-brand" href="/search">BrokenClock!</a>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
             <a href="/search">Search</a>
           </li>
-          <li class="col-md-3">
+          <li>
             <a href="/favorites">Favorites</a>
           </li>
-          <li class="col-md-3">
+          <li>
             <a href="/wishlist">Wishlist</a>
           </li>
-          <li class="col-md-3">
+          <li>
             <a href="/about">About</a>
           </li>
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
+
 
 
     <ng-view>
