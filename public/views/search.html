@@ -1,6 +1,15 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-      <form ng-submit="api.searchAPI(api.search, api.location)">
+    <div class="col-12-md">
+      <img src="/assets/images/controller.png" class="image-banner" />
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row search-input-row">
+    <form ng-submit="api.searchAPI(api.search, api.location)">
+      <div class="form-group">
         <!-- The <select> below will be used in future when I implement broader
               search parameters. -->
         <!-- <select name="query-location" ng-model="api.location">
@@ -32,17 +41,22 @@
             <span>Video</span>
           </option>
         </select> -->
-        <input class="col-md-11"  type="search" ng-model="api.search" />
-        <button class="col-md-1" type="submit">Search</button>
-      </form>
+        <div class="col-md-11 search-input-div">
+          <input class="form-control input-lg search-input" type="search" ng-model="api.search" />
+        </div>
+        <div class="col-md-1 search-button-div">
+          <button class="btn btn-default btn-lg search-button" type="submit">Search</button>
+        </div>
+    </form>
+    </div>
   </div>
 
+<!-- Search Results -->
+  <section id="results_list">
+    <div class="container">
 
-    <section id="results_list">
-      <div class="container">
-
-      <div class="row search-results well" ng-repeat="game in api.searchResults">
-        <div class="col-md-4" >
+      <div class="row search-results" ng-repeat="game in api.searchResults">
+        <div class="col-md-4 search-image-div">
           <img class="search-image" ng-src="{{ game.image.small_url }}" />
         </div>
         <div class="col-md-8 search-content">
@@ -56,6 +70,6 @@
         </div>
       </div>
 
-        <!-- Add ranking system here -->
-      </div>
-  </div>
+      <!-- Add ranking system here -->
+    </div>
+</div>

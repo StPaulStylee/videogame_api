@@ -1,3 +1,46 @@
 img.search-image {
   width: 100%;
 }
+
+/*----------------------------------------------------------------------
+Search
+-----------------------------------------------------------------------*/
+
+/*search input*/
+.search-input-row {
+
+}
+
+.search-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-input-div {
+  padding-right: 0;
+}
+
+.search-button {
+  border-bottom-left-radius: 0;
+  border-left: none;
+  border-top-left-radius: 0;
+}
+
+.search-button-div {
+  padding-left: 0;
+}
+
+.image-banner {
+  opacity: 0.7;
+  width: 100%;
+}
+
+/*search results*/
+
+.search-results {
+  padding-top: 10px;
+}
+
+.search-image-div {
+  padding-left: 0;
+}
