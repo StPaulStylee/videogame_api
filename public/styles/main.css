@@ -11,6 +11,13 @@ Search
 
 }
 
+.background-container {
+  background-image: url('/assets/images/controller.png');
+  background-repeat: no-repeat;;
+  background-size: 100%;
+  min-height: 900px;
+}
+
 .search-input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
