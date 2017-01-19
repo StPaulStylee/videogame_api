@@ -8,6 +8,7 @@
 
 <div class="container-fluid background-container">
   <div class="row search-input-row">
+    <img id="controller" src="/assets/images/controller.png" />
     <form ng-submit="api.searchAPI(api.search, api.location)">
       <div class="form-group">
         <!-- The <select> below will be used in future when I implement broader
@@ -41,10 +42,10 @@
             <span>Video</span>
           </option>
         </select> -->
-        <div class="col-md-8 col-md-offset-3 search-input-div">
-          <input class="form-control input-lg search-input" type="search" ng-model="api.search" />
+        <div class="col-md-7 col-md-offset-2 search-input-div">
+          <input class="form-control input-lg search-input" type="search" ng-model="api.search" autofocus/>
         </div>
-        <div class="col-md-1 search-button-div">
+        <div class="col-md-2 search-button-div">
           <button class="btn btn-default btn-lg search-button" type="submit">Search</button>
         </div>
     </form>
