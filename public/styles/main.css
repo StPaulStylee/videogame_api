@@ -1,5 +1,29 @@
-img.search-image {
-  width: 100%;
+/*----------------------------------------------------------------------
+Global
+-----------------------------------------------------------------------*/
+body {
+  font-family: 'Ek Mukta', sans-serif;
+}
+
+a {
+  color: #292929;
+}
+
+a:hover {
+  color: #7C342F;
+  transition: 0.5s;
+}
+
+
+/*----------------------------------------------------------------------
+Navigation
+-----------------------------------------------------------------------*/
+.nav-default {
+  border-bottom: 1px solid #333;
+}
+
+.navbar-brand {
+  font-family: 'Bowlby One SC', cursive;
 }
 
 /*----------------------------------------------------------------------
@@ -8,15 +32,17 @@ Search
 
 /*search input*/
 
-#controller {
+/*#controller {
   opacity: 0.7;
   position: absolute;
   top: 50px;
   width: 100%;
-}
+}*/
 
 .search-input {
   border-radius: 0;
+  font-size: 50px;
+  font-weight: 700;
   height: 80px;
 }
 
