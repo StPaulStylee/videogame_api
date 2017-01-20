@@ -35,6 +35,7 @@ Navigation
 -----------------------------------------------------------------------*/
 .nav-default {
   border-bottom: 1px solid #292929;
+  /*position: fixed;*/
 }
 
 .navbar-brand {
@@ -51,18 +52,20 @@ Search
 
 /*search input*/
 
-/*#controller {
+#controller {
   opacity: 0.7;
-  position: absolute;
+  position: fixed;
   top: 50px;
   width: 100%;
-}*/
+  z-index: -1;
+}
 
 .search-input {
   border-radius: 0;
   font-size: 50px;
   font-weight: 700;
   height: 80px;
+  margin-bottom: 150px;
 }
 
 .search-input-div {
@@ -93,4 +96,12 @@ Search
 
 .search-image-div {
   padding-left: 0;
+}
+
+.search-image {
+  width: 100%;
+}
+
+.well {
+  background-color: rgba(255, 255, 255, 0.95);
 }
