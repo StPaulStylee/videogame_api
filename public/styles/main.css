@@ -16,14 +16,6 @@ a {
   color: #292929;
 }
 
-/*a > span:hover, a > span:active, a > span:focus {
-  transition: 0.5s;
-}*/
-
-.banner-logo {
-  transition: 0.5s;
-}
-
 input[type=search], .btn {
   border: 1px solid #292929;
 }
@@ -39,6 +31,10 @@ input[type=search]:focus,
   box-shadow: inset 0 0 8px rgba(222, 158, 14, 0.6);
 }
 
+.glyphicon {
+  font-size: 24px;
+}
+
 
 /*----------------------------------------------------------------------
 Navigation
@@ -48,24 +44,30 @@ Navigation
 }
 .nav-default {
   border-bottom: 1px solid #292929;
-  /*position: fixed;*/
 }
 
 .navbar-brand {
   font-family: 'Bowlby One SC', cursive;
 }
 
-#banner-logo-broken:hover,
-#banner-logo-broken:active,
-#banner-logo-broken:focus {
-  color: #de9e0e;
+.navigation li a:hover {
+  background-color: rgba(139, 211, 251, 0.4);
+  color: #292929;
+  transition: 0.5s;
 }
 
-#banner-logo-clock:hover,
-#banner-logo-clock:active,
-#banner-logo-clock:focus {
-  color: #288a44;
-  /*transition: 0.5s;*/
+a:hover #banner-logo-broken,
+a:active #banner-logo-broken,
+a:focus #banner-logo-broken {
+  color: #7d5106;
+  transition: 0.5s;
+}
+
+a:hover #banner-logo-clock,
+a:active #banner-logo-clock,
+a:focus #banner-logo-clock {
+  color: #70ba3c;
+  transition: 0.5s;
 }
 
 li > a {
@@ -125,9 +127,18 @@ Search
 }
 
 .search-image {
+  box-shadow: 4px 2px 6px #6c6c6c;
   width: 100%;
 }
 
 .well {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.88);
+  border: 2.5px solid #ffb300;
+}
+
+.add {
+  color: darkblue;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
 }

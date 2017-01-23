@@ -61,13 +61,13 @@
           <img class="search-image" ng-src="{{ game.image.small_url }}" />
         </div>
         <div class="col-md-10search-content">
-          <h4>{{ game.name }} </h4>
+          <h3>{{ game.name }} </h3>
           <p>{{ game.deck }} <span><a target="_blank" href="{{ game.site_detail_url }}">More details...</a> </span></p>
           <p class="release-date">Released: {{ game.original_release_date }}</p>
           <p>Platforms: <span ng-repeat="platforms in game.platforms">{{ platforms.name }}, </span></p>
           <p>Rated: <span ng-repeat="ratings in game.original_game_rating">{{ ratings.name }}, </span></p>
-          <button class="col-md-6" type="button" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)">Add to Favorites</button>
-          <button class="col-md-6" type="button" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)">Add to Wishlist</button>
+          <p class="col-md-2 add" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)"><span class="glyphicon glyphicon-plus"></span> Add to Favorites</button>
+          <p class="col-md-2 add" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)"><span class="glyphicon glyphicon-plus"></span> Add to Wishlist</button>
         </div>
       </div>
 
