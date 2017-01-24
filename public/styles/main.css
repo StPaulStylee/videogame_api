@@ -2,8 +2,9 @@
 Colors
 -----------------------------------------------------------------------*/
 /*Fonts and Borders*/ #292929
-/*Hover Font*/ #ffb300, #288a44
-
+/*Logo Hover Font*/ #7d5106, #70ba3c
+/*Other clickables/hover */ darkblue,
+/*Well Borders*/ #ffb300
 
 /*----------------------------------------------------------------------
 Global
@@ -14,6 +15,12 @@ body {
 
 a {
   color: #292929;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
 }
 
 input[type=search], .btn {
@@ -43,6 +50,7 @@ Navigation
   margin-bottom: 0;
 }
 .nav-default {
+  background-color: #faf5f5;
   border-bottom: 1px solid #292929;
 }
 
@@ -89,11 +97,12 @@ Search
 }
 
 .search-input {
+  background-color: #faf5f5;
   border-radius: 0;
   font-size: 50px;
   font-weight: 700;
   height: 80px;
-  margin-bottom: 150px;
+  margin: 150px 0 150px 25px;
 }
 
 .search-input-div {
@@ -101,10 +110,12 @@ Search
 }
 
 .search-button {
+  background-color: #faf5f5;
   border-bottom-left-radius: 0;
   border-left: none;
   border-top-left-radius: 0;
   height: 80px;
+  margin: 150px 0 150px 25px;
 }
 
 .search-button-div {
@@ -117,6 +128,14 @@ Search
 }
 
 /*search results*/
+
+.game-name {
+  margin-top: 0;
+}
+
+.search-content p {
+  margin: 0 0 3px;
+}
 
 .search-results {
   padding-top: 10px;
@@ -131,14 +150,51 @@ Search
   width: 100%;
 }
 
+.no-image {
+  font-family: 'Anton', sans-serif;
+  font-size: 26px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
 .well {
-  background-color: rgba(255, 255, 255, 0.88);
+  background-color: rgba(250, 245, 245, 0.9);
   border: 2.5px solid #ffb300;
 }
 
-.add {
+.add, #giantbomb-link {
   color: darkblue;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.add:hover,
+.add:focus,
+.add:active {
+  transform: scale(1.125);
+  transition: 0.2s;
+}
+
+
+.add {
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
+  padding-left: 0;
+}
+
+a:hover .giantbomb-link-more,
+a:focus .giantbomb-link-more,
+a:active .giantbomb-link-more {
+  color: #7d5106;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover .giantbomb-link-details,
+a:focus .giantbomb-link-details,
+a:active .giantbomb-link-details {
+  color: #70ba3c;
+  text-decoration: none;
+  transition: 0.5s;
 }

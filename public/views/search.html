@@ -57,17 +57,18 @@
     <div class="container">
 
       <div class="row search-results well" ng-repeat="game in api.searchResults">
-        <div class="col-md-2 search-image-div">
-          <img class="search-image" ng-src="{{ game.image.small_url }}" />
+        <div class="col-md-2 search-image-div" ng-switch="game.image">
+          <p class="no-image" ng-switch-when="null">No<br /> Image<br /> Available</p>
+          <img class="search-image" ng-swith-when="!null" ng-src="{{ game.image.small_url }}" />
         </div>
-        <div class="col-md-10search-content">
-          <h3>{{ game.name }} </h3>
-          <p>{{ game.deck }} <span><a target="_blank" href="{{ game.site_detail_url }}">More details...</a> </span></p>
-          <p class="release-date">Released: {{ game.original_release_date }}</p>
-          <p>Platforms: <span ng-repeat="platforms in game.platforms">{{ platforms.name }}, </span></p>
-          <p>Rated: <span ng-repeat="ratings in game.original_game_rating">{{ ratings.name }}, </span></p>
-          <p class="col-md-2 add" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)"><span class="glyphicon glyphicon-plus"></span> Add to Favorites</button>
-          <p class="col-md-2 add" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)"><span class="glyphicon glyphicon-plus"></span> Add to Wishlist</button>
+        <div class="col-md-10 search-content">
+          <h3 class="game-name">{{ game.name }} </h3>
+          <p>{{ game.deck }} <span><a id="giantbomb-link" target="_blank" href="{{ game.site_detail_url }}"><span class="giantbomb-link-more">More</span><span class="giantbomb-link-details"> details...</span></a> </span></p>
+          <p class="release-date"><b>Released:</b> {{ game.original_release_date === null ? "No information available." : game.original_release_date }}</p>
+          <p><b>Platforms:</b> <span ng-repeat="platforms in game.platforms">{{ platforms.name }}, </span></p>
+          <p ng-if="game.original_game_rating != null"><b>Rated:</b> <span ng-repeat="ratings in game.original_game_rating">{{ ratings.name }}, </span></p>
+          <p class="col-md-3 add" ng-controller="favoritesController as favorite" ng-click="favorite.openFavoritesModal(game)"><span class="glyphicon glyphicon-plus"></span> Add to Favorites</button>
+          <p class="col-md-3 add" ng-controller="WishlistController as wish" ng-click="wish.openWishlistModal(game)"><span class="glyphicon glyphicon-plus"></span> Add to Wishlist</button>
         </div>
       </div>
 
