@@ -176,10 +176,11 @@ Search
 }
 
 
-.add {
+.search-content .add {
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
+  margin-top: 10px;
   padding-left: 0;
 }
 
