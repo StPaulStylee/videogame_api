@@ -1,4 +1,24 @@
-<h3>Add a Favorite</h3>
-<input type="text" id="favorite-comment" ng-model="favorite.comment" placeholder="Tell us why you love this game..." />
-<button type="button" ng-click="newFavorite.addFavorite(favorite.comment)">Add</button>
-<button type="button" ng-click="newFavorite.closeModal()">Cancel</button>
+<section class="add-favorite">
+
+<div class="container">
+  <div class="row">
+    <h3 class="col-md-5">Add a Favorite</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-1">
+      <input type="text" id="favorite-comment" ng-model="favorite.comment" placeholder="Tell us why you love this game..." />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-1">
+      <button class="btn btn-default btn-lg" id="add-favorite" type="button" ng-click="newFavorite.addFavorite(favorite.comment)">Add</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-1">
+      <button class="btn btn-default btn-lg" id="cancel" type="button" ng-click="newFavorite.closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+</section>

@@ -5,6 +5,7 @@ Colors
 /*Logo Hover Font*/ #7d5106, #70ba3c
 /*Other clickables/hover */ darkblue,
 /*Well Borders*/ #ffb300
+/*Backgrounds*/ #faf5f5
 
 /*----------------------------------------------------------------------
 Global
@@ -23,23 +24,34 @@ a:active {
   text-decoration: none;
 }
 
-input[type=search], .btn {
-  border: 1px solid #292929;
+.btn:focus,
+.btn:active,
+.btn:hover {
+  border: 1px solid #de9e0e;
+;
 }
 
 input[type=search]:hover,
 input[type=search]:active,
 input[type=search]:focus,
+input[type=text]:hover,
+input[type=text]:active,
+input[type=text]:focus,
 .btn-default:hover,
 .btn-default:active,
 .btn-default:focus {
-  background-color: #fff;
+  background-color: #faf5f5;
   border-color: #de9e0e;
   box-shadow: inset 0 0 8px rgba(222, 158, 14, 0.6);
 }
 
 .glyphicon {
   font-size: 24px;
+}
+
+.modal-content {
+  background-color: #faf5f5;
+  padding-bottom: 10px;
 }
 
 
@@ -58,7 +70,9 @@ Navigation
   font-family: 'Bowlby One SC', cursive;
 }
 
-.navigation li a:hover {
+.navigation li a:hover,
+.navigation li a:focus,
+.navigation li a:active {
   background-color: rgba(139, 211, 251, 0.4);
   color: #292929;
   transition: 0.5s;
@@ -112,7 +126,7 @@ Search
 .search-button {
   background-color: #faf5f5;
   border-bottom-left-radius: 0;
-  border-left: none;
+  /*border-left: none;*/
   border-top-left-radius: 0;
   height: 80px;
   margin: 150px 0 150px 25px;
@@ -198,4 +212,18 @@ a:active .giantbomb-link-details {
   color: #70ba3c;
   text-decoration: none;
   transition: 0.5s;
+}
+
+/*----------------------------------------------------------------------
+Add Favorites Modal
+-----------------------------------------------------------------------*/
+#favorite-comment, #add-favorite, #cancel {
+  background-color: #faf5f5;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+#favorite-comment {
+  font-size: 20px;
+  height: 80px;
 }
