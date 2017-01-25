@@ -14,11 +14,11 @@ function WishlistService($http) {
   };
 
   service.addWishlistItem = function(wishObjectToSend) {
-    console.log('From service: ', wishObjectToSend);
+    console.log('From Wishlist service: ', wishObjectToSend);
     service.newWish = {
       title: wishObjectToSend.title,
       description: wishObjectToSend.description,
-      platform: wishObjectToSend.platform,
+      platform: wishObjectToSend.platform.name,
       game_image: wishObjectToSend.game_image,
       site_detail_url: wishObjectToSend.site_detail_url
     };

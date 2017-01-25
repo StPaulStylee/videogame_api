@@ -1,27 +1,37 @@
-<h3>Favorites</h3>
 <section id="favorites_list">
-  <ul class="favorites" ng-repeat="game in favorite.favoritesList">
-    <li>
-      {{ game.title }}
-    </li>
-    <li>
-      <p>{{ game.description }} <span><a href="{{ game.site_detail_url }}" target="_blank">More details...</a></span></p>
-    </li>
-    <li>
-      {{ game.release_date }}
-    </li>
-    <li ng-repeat="ratings in game.game_rating">
-      {{ ratings }}
-    </li>
-    <li ng-repeat="platforms in game.platforms">
-      {{ platforms }}
-    </li>
-    <li>
-      <img ng-src="{{ game.game_image }}" alt="{{ game.title }} image" />
-    </li>
-    <li>
-      {{ game.favorite_comment }}
-      <button type="button" ng-click="favorite.openEditFavoritesModal(game)">Edit</button>
-    </li>
-  </ul>
-</section>
+
+  <div class="container">
+    <div class="row">
+      <h3 class="col-md-12 favorites-header">Favorites</h3>
+    </div>
+      <div class="row search-results well" ng-repeat="game in favorite.favoritesList">
+        <div class="col-md-2 search-image-div" ng-switch="game.image">
+          <p class="no-image" ng-switch-when="null">No<br /> Image<br /> Available</p>
+          <img class="search-image" ng-swith-when="!null" ng-src="{{ game.image.small_url }}" />
+        </div>
+        <li>
+          {{ game.title }}
+        </li>
+        <li>
+          <p>{{ game.description }} <span><a href="{{ game.site_detail_url }}" target="_blank">More details...</a></span></p>
+        </li>
+        <li>
+          {{ game.release_date }}
+        </li>
+        <li ng-repeat="ratings in game.game_rating">
+          {{ ratings }}
+        </li>
+        <li ng-repeat="platforms in game.platforms">
+          {{ platforms }}
+        </li>
+        <li>
+          <img ng-src="{{ game.game_image }}" alt="{{ game.title }} image" />
+        </li>
+        <li>
+          {{ game.favorite_comment }}
+          <button type="button" ng-click="favorite.openEditFavoritesModal(game)">Edit</button>
+        </li>
+      </ul>
+  </div>
+
+  </section>

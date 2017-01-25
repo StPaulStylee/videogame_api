@@ -26,7 +26,7 @@ function FavoriteService($http) {
       release_date: data.original_release_date,
       platforms: service.getPlatforms(data),
       game_rating: service.getRating(data),
-      game_image: data.image.thumb_url,
+      game_image: data.image.small_url,
       favorite_comment: data.favorite_comment,
       site_detail_url: data.site_detail_url
     };

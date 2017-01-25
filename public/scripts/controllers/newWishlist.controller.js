@@ -14,7 +14,7 @@ function NewWishlistController(wishServ, $uibModalInstance) {
       title: ctrl.wishToAdd.name,
       description: ctrl.wishToAdd.deck,
       platform: wishlistItemPlatform,
-      game_image: ctrl.wishToAdd.image.thumb_url
+      game_image: ctrl.wishToAdd.image.small_url
     };
     wishServ.addWishlistItem(ctrl.wishObjectToSend).then(function(response){
       console.log('Wishlist Item added!');
