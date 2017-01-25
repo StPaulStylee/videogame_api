@@ -14,7 +14,7 @@ function NewWishlistController(wishServ, $uibModalInstance) {
       title: ctrl.wishToAdd.name,
       description: ctrl.wishToAdd.deck,
       platform: wishlistItemPlatform,
-      game_image: ctrl.wishToAdd.image.small_url
+      game_image: ctrl.getImage(ctrl.wishToAdd)
     };
     wishServ.addWishlistItem(ctrl.wishObjectToSend).then(function(response){
       console.log('Wishlist Item added!');
@@ -25,4 +25,12 @@ function NewWishlistController(wishServ, $uibModalInstance) {
   ctrl.closeModal = function() {
     $uibModalInstance.close();
   };
+
+  ctrl.getImage = function(gameInfo) {
+    if (gameInfo.image != null) {
+      return gameInfo.image.small_url;
+    } else {
+      return null;
+    }
+  }
 }

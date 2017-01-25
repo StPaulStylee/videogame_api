@@ -52,7 +52,7 @@
       <div class="row search-results well" ng-repeat="game in api.searchResults">
         <div class="col-md-2 search-image-div" ng-switch="game.image">
           <p class="no-image" ng-switch-when="null">No<br /> Image<br /> Available</p>
-          <img class="search-image" ng-swith-when="!null" ng-src="{{ game.image.small_url }}" />
+          <img class="search-image" ng-src="{{ game.image.small_url }}" />
         </div>
         <div class="col-md-10 search-content">
           <h3 class="game-name">{{ game.name }} </h3>

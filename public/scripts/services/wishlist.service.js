@@ -10,15 +10,16 @@ function WishlistService($http) {
   };
 
   service.getStoredGame = function() {
+    console.log('From wishlist service storage', service.storedGame);
     return service.storedGame;
   };
 
   service.addWishlistItem = function(wishObjectToSend) {
-    console.log('From Wishlist service: ', wishObjectToSend);
+    console.log('From Wishlist service: ', wishObjectToSend, wishObjectToSend.platform.name);
     service.newWish = {
       title: wishObjectToSend.title,
       description: wishObjectToSend.description,
-      platform: wishObjectToSend.platform.name,
+      platform: wishObjectToSend.platform,
       game_image: wishObjectToSend.game_image,
       site_detail_url: wishObjectToSend.site_detail_url
     };

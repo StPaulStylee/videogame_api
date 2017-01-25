@@ -26,7 +26,7 @@ function FavoriteService($http) {
       release_date: data.original_release_date,
       platforms: service.getPlatforms(data),
       game_rating: service.getRating(data),
-      game_image: data.image.small_url,
+      game_image: service.getImage(data),
       favorite_comment: data.favorite_comment,
       site_detail_url: data.site_detail_url
     };
@@ -69,7 +69,7 @@ function FavoriteService($http) {
       } else {
         return null;
       }
-    }
+    };
     // service.getRating allows just the name to be pulled from the rating object
     // and sent to the database
     service.getRating = function(gameInfo) {
@@ -82,6 +82,14 @@ function FavoriteService($http) {
       } else {
         return null;
       }
-    }
+    };
+
+    service.getImage = function(gameInfo) {
+      if (gameInfo.image != null) {
+        return gameInfo.image.small_url;
+      } else {
+      return null;
+      }
+    };
 
   } // End of service
