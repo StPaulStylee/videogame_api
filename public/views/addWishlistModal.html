@@ -1,10 +1,27 @@
-<h3>Add Game to Wishlist</h3>
+<section class="add-wishlist-item">
 
-  <select name="Platform" ng-model="newWish.platform">
+<div class="container">
+  <div class="row">
+    <h3 class="col-md-5 modal-header">Add to Wishlist...</h3>
+  </div>
+  <div class="row">
+    <ui-select name="Platform" ng-model="newWish.platform">
+      <ui-select-match="Select Preferred Gaming Platform...">{{ $select.selected.name }}</ui-select-match>
+      <ui-select-choices repeat="platform in newWish.wishToAdd.platforms" value="{{ platform.name }}">
+        <div ng-bind-html="platform.name"></div>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-1">
+      <button class="btn btn-default btn-lg add-favorite-button" type="button" ng-click="newWish.addWishlistItem(newWish.platform)">Add</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-1">
+      <button class="btn btn-default btn-lg cancel-button" type="button" ng-click="newWish.closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>
 
-    <option ng-repeat="platform in newWish.wishToAdd.platforms" value="{{ platform.name }}">
-      {{ platform.name }}
-    </option>
-  </select>
-  <button type="button" ng-click="newWish.addWishlistItem(newWish.platform)">Add</button>
-  <button type="button" ng-click="newWish.closeModal()">Cancel</button>
+</section>

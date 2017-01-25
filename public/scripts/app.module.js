@@ -1,1 +1,1 @@
-angular.module('videoGameApp', ['ngRoute', 'ui.bootstrap']);
+angular.module('videoGameApp', ['ngRoute', 'ui.bootstrap', 'ui.select', 'ngSanitize']);

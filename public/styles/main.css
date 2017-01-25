@@ -4,8 +4,10 @@ Colors
 /*Fonts and Borders*/ #292929
 /*Logo Hover Font*/ #7d5106, #70ba3c
 /*Other clickables/hover */ darkblue,
-/*Well Borders*/ #ffb300
+/*Well Borders, Modal Borders*/ #ffb300
 /*Backgrounds*/ #faf5f5
+/*Add button*/ #70ba3c
+/*Cancel Button*/ #e85b4d
 
 /*----------------------------------------------------------------------
 Global
@@ -34,15 +36,16 @@ a:active {
 input[type=search]:hover,
 input[type=search]:active,
 input[type=search]:focus,
-input[type=text]:hover,
-input[type=text]:active,
-input[type=text]:focus,
+textarea:hover,
+textarea:active,
+textarea:focus,
 .btn-default:hover,
 .btn-default:active,
 .btn-default:focus {
   background-color: #faf5f5;
   border-color: #de9e0e;
   box-shadow: inset 0 0 8px rgba(222, 158, 14, 0.6);
+  outline: none;
 }
 
 .glyphicon {
@@ -51,6 +54,7 @@ input[type=text]:focus,
 
 .modal-content {
   background-color: #faf5f5;
+  border: 2.5px #ffb300 solid;
   padding-bottom: 10px;
 }
 
@@ -217,13 +221,39 @@ a:active .giantbomb-link-details {
 /*----------------------------------------------------------------------
 Add Favorites Modal
 -----------------------------------------------------------------------*/
-#favorite-comment, #add-favorite, #cancel {
+.modal-header {
+  border: none;
+  font-weight: 700;
+}
+
+#favorite-comment, .add-favorite-button, .cancel-button {
   background-color: #faf5f5;
   margin-bottom: 10px;
   width: 100%;
 }
 
 #favorite-comment {
-  font-size: 20px;
+  font-size: 16px;
   height: 80px;
+}
+
+button.btn.btn-default.btn-lg.add-favorite-button,
+button.btn.btn-default.btn-lg.cancel-button {
+  color: #faf5f5;
+  font-weight: 700;
+}
+
+.add-favorite-button:hover, .cancel-button:hover,
+.add-favorite-button:active, .cancel-button:active,
+.add-favorite-button:focus, .cancel-button:focus {
+  box-shadow: inset 4px 2px 6px #6c6c6c;
+  transition: 0.25s;
+}
+
+button.btn.btn-default.btn-lg.add-favorite-button {
+  background-color: #70ba3c;
+}
+
+button.btn.btn-default.btn-lg.cancel-button {
+  background-color: #e85b4d;
 }

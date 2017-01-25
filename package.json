@@ -12,10 +12,12 @@
   "dependencies": {
     "angular": "^1.6.0",
     "angular-route": "^1.6.0",
+    "angular-sanitize": "^1.6.1",
     "angular-ui-bootstrap": "^2.4.0",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",
-    "pg": "^6.1.2"
+    "pg": "^6.1.2",
+    "ui-select": "^0.19.6"
   }
 }
