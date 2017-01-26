@@ -35,6 +35,8 @@ function EditFavoriteController (favServ, $uibModalInstance) {
     return favServ.storedGame.favorite_comment;
   }
 
+  ctrl.gameName = favServ.getStoredGameName();
+
   ctrl.closeModal = function() {
     $uibModalInstance.close();
   }

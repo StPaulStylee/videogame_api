@@ -13,6 +13,7 @@ function FavoriteService($http) {
      service.storedGame = gameObject;
      service.storedGame.id = gameObject.id;
      service.storedGame.favorite_comment = gameObject.favorite_comment;
+     console.log('On modal open', service.storedGame);
   }
 
   service.getStoredGame = function() {
@@ -25,7 +26,7 @@ function FavoriteService($http) {
 
   service.addFavorite = function(data) {
     service.newFavorite = {
-      title: data.name,
+      name: data.name,
       description: data.deck,
       release_date: data.original_release_date,
       platforms: service.getPlatforms(data),

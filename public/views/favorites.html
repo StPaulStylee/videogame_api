@@ -10,7 +10,7 @@
           <img class="results-image" ng-src="{{ game.game_image }}" alt=" {{ game.title }} image" />
         </div>
         <div class="col-md-10 content">
-          <h3 class="game-name">{{ game.title }}</h3>
+          <h3 class="game-name">{{ game.name }}</h3>
           <p>{{ game.description }} <span><a id="giantbomb-link" href="{{ game.site_detail_url }}" target="_blank">More details...</a></span></p>
           <p class="release_date"><b>Release Date: </b>{{ game.release_date === null ? "No information available" : game.release_date }}</p>
           <p><b>Platforms:</b><span ng-repeat="platforms in game.platforms">{{ platforms }}</span></p>
