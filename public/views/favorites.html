@@ -1,21 +1,21 @@
-<section id="favorites_list">
+<section id="favorites-list">
 
   <div class="container">
     <div class="row">
-      <h3 class="col-md-12 favorites-header">Favorites</h3>
+      <h3 class="col-md-12 section-header">Favorites</h3>
     </div>
-      <div class="row search-results well" ng-repeat="game in favorite.favoritesList">
-        <div class="col-md-2 search-image-div" ng-switch="game.game_image">
+      <div class="row results well" ng-repeat="game in favorite.favoritesList">
+        <div class="col-md-2 results-image-div" ng-switch="game.game_image">
           <p class="no-image" ng-switch-when="null">No<br /> Image<br /> Available</p>
-          <img class="search-image" ng-src="{{ game.game_image }}" alt=" {{ game.title }} image" />
+          <img class="results-image" ng-src="{{ game.game_image }}" alt=" {{ game.title }} image" />
         </div>
-        <div class="col-md-10 search-content">
-          <h3 class="game-name:">{{ game.title }}</h3>
+        <div class="col-md-10 content">
+          <h3 class="game-name">{{ game.title }}</h3>
           <p>{{ game.description }} <span><a id="giantbomb-link" href="{{ game.site_detail_url }}" target="_blank">More details...</a></span></p>
           <p class="release_date"><b>Release Date: </b>{{ game.release_date === null ? "No information available" : game.release_date }}</p>
           <p><b>Platforms:</b><span ng-repeat="platforms in game.platforms">{{ platforms }}</span></p>
           <p ng-if="game.game_rating != null"><b>Rated:</b><span ng-repeat="ratings in game.game_rating">{{ ratings }}</span></p>
-          <p class="comment">{{ game.favorite_comment }}</p>
+          <p class="comment"><b>Comment: </b>{{ game.favorite_comment }}</p>
           <div class="row">
             <div class="col-md-12">
               <button class="btn btn-default btn-lg cancel-button" type="button" ng-click="favorite.openEditFavoritesModal(game)">Edit</button>
