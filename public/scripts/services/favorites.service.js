@@ -19,6 +19,10 @@ function FavoriteService($http) {
     return service.storedGame;
   }
 
+  service.getStoredGameName = function() {
+    return service.storedGame.name;
+  }
+
   service.addFavorite = function(data) {
     service.newFavorite = {
       title: data.name,
