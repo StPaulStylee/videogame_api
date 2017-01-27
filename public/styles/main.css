@@ -102,7 +102,7 @@ button.btn.btn-default.btn-lg.cancel-button {
   padding: 10px;
 }
 
-#favorites-list, #wishlist {
+#favorites-list, #wishlist, #about {
   padding-top: 100px;
 }
 
@@ -229,7 +229,7 @@ Search
   position: relative;
 }
 
-.add, #giantbomb-link {
+.add, .giantbomb-link, #email, #linkedIn {
   color: darkblue;
   font-weight: 700;
   transition: 0.2s;
@@ -335,4 +335,13 @@ Edit Wishlist Modal
 ---------------------------------------------------------------------*/
 #edit-wishlist button {
   width: 100%;
+}
+
+/*----------------------------------------------------------------------
+About
+---------------------------------------------------------------------*/
+
+#email:hover, #email:focus, #email:active,
+#linkedIn:hover, #linkedIn:focus, #linkedIn:active {
+  color: #70ba3c; 
 }

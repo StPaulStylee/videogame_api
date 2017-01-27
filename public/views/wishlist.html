@@ -8,7 +8,7 @@
       </div>
       <div class="col-md-10 content">
         <h3 class="game-name">{{ game.name }}</h3>
-        <p>{{ game.description }} <span><a id="giantbomb-link" href="{{ game.site_detail_url }}" target="_blank">More details...</a></span></p>
+        <p>{{ game.description }} <span><a class="giantbomb-link" href="{{ game.site_detail_url }}" target="_blank"><span class="giantbomb-link-more">More</span><span class="giantbomb-link-details"> details...</span></a></span></p>
         <p><b>Platform:</b><span ng-repeat="platforms in game.platforms track by $index">{{ platforms }}</span></p>
         <div class="row">
           <div class="col-md-12">

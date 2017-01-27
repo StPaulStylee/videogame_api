@@ -1,7 +1,6 @@
 <section class="search">
 
   <div class="row search-input-row">
-    <!-- <h1 id="banner">BrokenClock!</h1> -->
     <form ng-submit="api.searchAPI(api.search, api.location)">
       <div class="form-group">
         <!-- The <select> below will be used in future when I implement broader
@@ -35,10 +34,10 @@
             <span>Video</span>
           </option>
         </select> -->
-        <div class="col-md-7 col-md-offset-2 search-input-div">
+        <div class="col-md-7 col-md-offset-2 col-sm-10 search-input-div">
           <input class="form-control input-lg search-input" type="search" ng-model="api.search" autofocus/>
         </div>
-        <div class="col-md-2 search-button-div">
+        <div class="col-md-2 col-sm-2 search-button-div">
           <button class="btn btn-default btn-lg search-button" type="submit">Search</button>
         </div>
     </form>
@@ -56,7 +55,7 @@
         </div>
         <div class="col-md-10 content">
           <h3 class="game-name">{{ game.name }} </h3>
-          <p>{{ game.deck }} <span><a id="giantbomb-link" target="_blank" href="{{ game.site_detail_url }}"><span class="giantbomb-link-more">More</span><span class="giantbomb-link-details"> details...</span></a> </span></p>
+          <p>{{ game.deck }} <span><a class="giantbomb-link" target="_blank" href="{{ game.site_detail_url }}"><span class="giantbomb-link-more">More</span><span class="giantbomb-link-details"> details...</span></a> </span></p>
           <p class="release-date"><b>Released:</b> {{ game.original_release_date === null ? "No information available." : game.original_release_date }}</p>
           <p><b>Platforms:</b> <span ng-repeat="platforms in game.platforms">{{ platforms.name }}, </span></p>
           <p ng-if="game.original_game_rating != null"><b>Rated:</b> <span ng-repeat="ratings in game.original_game_rating">{{ ratings.name }}, </span></p>
