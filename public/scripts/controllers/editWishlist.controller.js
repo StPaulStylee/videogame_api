@@ -13,6 +13,8 @@ function EditWishlistController(wishServ, $uibModalInstance) {
     });
   };
 
+  ctrl.gameName = wishServ.getStoredGameName();
+
   ctrl.closeModal = function() {
     $uibModalInstance.close();
   };

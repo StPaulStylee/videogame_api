@@ -46,6 +46,11 @@ textarea:focus,
   border-color: #de9e0e;
   box-shadow: inset 0 0 8px rgba(222, 158, 14, 0.6);
   outline: none;
+  transition: 0.25s;
+}
+
+button {
+  font-weight: 700;
 }
 
 button.btn.btn-default.btn-lg.add-button,
@@ -54,19 +59,37 @@ button.btn.btn-default.btn-lg.cancel-button {
   font-weight: 700;
 }
 
-.add-button:hover, .cancel-button:hover,
-.add-button:active, .cancel-button:active,
-.add-button:focus, .cancel-button:focus {
-  box-shadow: inset 4px 2px 6px #6c6c6c;
+.add-button:hover, .cancel-button:hover, .remove-button:hover, .edit-button:hover,
+.add-button:active, .cancel-button:active, .remove-button:active, .edit-button:active,
+.add-button:focus, .cancel-button:focus, .remove-button:focus, .edit-button:focus {
+  box-shadow: inset 4px 2px 6px #262525;
   transition: 0.25s;
 }
 
 button.btn.btn-default.btn-lg.add-button {
   background-color: #70ba3c;
+  border-color: #5cbd19;
 }
 
 button.btn.btn-default.btn-lg.cancel-button {
   background-color: #e85b4d;
+  border-color: #e93826;
+}
+
+.btn-warning, .btn-primary {
+  font-weight: 700;
+}
+
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active {
+  background-color: #f0ad4e;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #337ab7;
 }
 
 .glyphicon {
@@ -76,7 +99,11 @@ button.btn.btn-default.btn-lg.cancel-button {
 .modal-content {
   background-color: #faf5f5;
   border: 2.5px #ffb300 solid;
-  padding-bottom: 10px;
+  padding: 10px;
+}
+
+#favorites-list, #wishlist {
+  padding-top: 100px;
 }
 
 
@@ -199,6 +226,7 @@ Search
 .well {
   background-color: rgba(250, 245, 245, 0.9);
   border: 2.5px solid #ffb300;
+  position: relative;
 }
 
 .add, #giantbomb-link {
@@ -240,7 +268,7 @@ a:active .giantbomb-link-details {
 }
 
 /*----------------------------------------------------------------------
-Search
+Add Favorite Modal
 -----------------------------------------------------------------------*/
 
 .content .comment {
@@ -255,16 +283,20 @@ Search
 Favorites
 -----------------------------------------------------------------------*/
 
-#favorites-list {
-  margin-top: 50px;
+/*----------------------------------------------------------------------
+Wishlist
+-----------------------------------------------------------------------*/
+#wishlist button.remove-button {
+  margin-top: 10px;
+  width: 100%;
 }
-
 /*----------------------------------------------------------------------
 Add Favorites Modal
 -----------------------------------------------------------------------*/
 .modal-header {
   border: none;
   margin: 0;
+  padding-top: 0;
 }
 
 #favorite-comment, .add-button, .cancel-button {
@@ -282,4 +314,25 @@ Add Wishlist Modal
 -----------------------------------------------------------------------*/
 .ui-select-toggle {
   margin-bottom: 10px;
+}
+
+#edit-favorite button {
+  width: 100%;
+}
+
+textarea:disabled#favorite-comment {
+  background-color: rgb(181, 185, 185);
+}
+
+textarea:disabled#favorite-comment:hover {
+  border-color: #e85b4d;
+  box-shadow: inset 0 0 8px rgba(232, 91, 77, 0.6);
+  transition: 0.25s;
+}
+
+/*----------------------------------------------------------------------
+Edit Wishlist Modal
+---------------------------------------------------------------------*/
+#edit-wishlist button {
+  width: 100%;
 }

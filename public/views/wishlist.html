@@ -1,18 +1,21 @@
-<h3>Your Wishlist</h3>
 <section id="wishlist">
-  <ul class="wishes" ng-repeat="game in wish.wishlistItems">
-    <li>
-      {{ game.title }}
-    </li>
-    <li>
-      <p>{{ game.description }} <span><a href="{{ game.site_detail_url }}" target="_blank">More details...</a></span></p>
-    </li>
-    <li>
-      {{ game.platforms }}
-    </li>
-    <li>
-      <img ng-src="{{ game.game_image }}" alt="{{ game.title }} image" />
-    </li>
-      <button type="button" ng-click="wish.openRemoveWishlistModal(game)">Remove</button>
-  </ul>
+
+  <div class="container">
+    <div class="row results well" ng-repeat="game in wish.wishlistItems">
+      <div class="col-md-2 results-image-div" ng-switch="game.game_image">
+        <p class="no-image" ng-switch-when="null">No<br /> Image<br /> Available</p>
+        <img class="results-image" ng-src="{{ game.game_image }}" alt=" {{ game.title }} image" />
+      </div>
+      <div class="col-md-10 content">
+        <h3 class="game-name">{{ game.name }}</h3>
+        <p>{{ game.description }} <span><a id="giantbomb-link" href="{{ game.site_detail_url }}" target="_blank">More details...</a></span></p>
+        <p><b>Platform:</b><span ng-repeat="platforms in game.platforms track by $index">{{ platforms }}</span></p>
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn btn-warning btn-lg remove-button" type="button" ng-click="wish.openRemoveWishlistModal(game)">Remove</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </section>
