@@ -12,6 +12,14 @@ Colors
 /*----------------------------------------------------------------------
 Global
 -----------------------------------------------------------------------*/
+.navbar-collapse.in {
+  overflow-y: hidden;
+}
+
+.icon-bar {
+  background-color: #292929;
+}
+
 body {
   font-family: 'Ek Mukta', sans-serif;
 }
@@ -30,7 +38,6 @@ a:active {
 .btn:active,
 .btn:hover {
   border: 1px solid #de9e0e;
-;
 }
 
 input[type=search]:hover,
@@ -343,5 +350,5 @@ About
 
 #email:hover, #email:focus, #email:active,
 #linkedIn:hover, #linkedIn:focus, #linkedIn:active {
-  color: #70ba3c; 
+  color: #70ba3c;
 }
