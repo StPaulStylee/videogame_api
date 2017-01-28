@@ -4,7 +4,7 @@
     <div class="row results well" ng-repeat="game in wish.wishlistItems">
       <div class="col-md-2 results-image-div" ng-switch="game.game_image">
         <p class="no-image" ng-switch-when="null">No<br /> Image<br /> Available</p>
-        <img ng-if="game.game_image != null" class="img-thumbnail results-image" ng-src="{{ game.game_image }}" alt=" {{ game.title }} image" />
+        <img ng-if="game.game_image != null" class="img-thumbnail img-responsive center-block results-image" ng-src="{{ game.game_image }}" alt=" {{ game.title }} image" />
       </div>
       <div class="col-md-10 content">
         <h3 class="game-name">{{ game.name }}</h3>
