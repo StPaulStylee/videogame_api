@@ -2,7 +2,6 @@ angular.module('videoGameApp')
        .controller('favoritesController', favoritesController);
 
 function favoritesController(favServ, $uibModal) {
-  console.log('favoritesController Loaded');
 
   var ctrl = this;
 

@@ -31,7 +31,7 @@ function FavoriteService($http) {
       release_date: data.original_release_date,
       platforms: service.getPlatforms(data),
       game_rating: service.getRating(data),
-      game_image: service.getImage(data),
+      game_image_tablet: service.getImageLargeScreen(data),
       favorite_comment: data.favorite_comment,
       site_detail_url: data.site_detail_url
     };
@@ -89,9 +89,17 @@ function FavoriteService($http) {
       }
     };
 
-    service.getImage = function(gameInfo) {
+    service.getImageLargeScreen = function(gameInfo) {
       if (gameInfo.image != null) {
         return gameInfo.image.small_url;
+      } else {
+      return null;
+      }
+    };
+
+    service.getImageSmallScreen = function(gameInfo) {
+      if (gameInfo.image != null) {
+        return gameInfo.image.thumb_url;
       } else {
       return null;
       }

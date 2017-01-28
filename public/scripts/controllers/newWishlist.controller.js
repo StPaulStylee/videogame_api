@@ -2,7 +2,6 @@ angular.module('videoGameApp')
        .controller('NewWishlistController', NewWishlistController);
 
 function NewWishlistController(wishServ, $uibModalInstance) {
-  console.log('NewWishlistController Loaded');
 
   var ctrl = this;
 

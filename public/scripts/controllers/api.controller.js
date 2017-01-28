@@ -3,8 +3,6 @@ angular.module('videoGameApp')
 
 function videoGameAPIController(vgAPI) {
   var ctrl = this;
-  //ctrl.searchResults = [];
-  console.log('videoGameAPIController Loaded');
 
 // When expanding the search functionality, you'll need to add a "search location" or
 // something like that as a second paramerter
@@ -16,7 +14,5 @@ function videoGameAPIController(vgAPI) {
       console.log('Saved object: ', ctrl.searchResults);
     });
   }
-
-
 
 } //End of videoGameAPIController
