@@ -34,6 +34,10 @@ a:active {
   text-decoration: none;
 }
 
+.btn {
+  margin-bottom: 10px;
+}
+
 .btn:focus,
 .btn:active,
 .btn:hover {
@@ -58,6 +62,7 @@ textarea:focus,
 
 button {
   font-weight: 700;
+  margin-bottom: 10px;
 }
 
 button.btn.btn-default.btn-lg.add-button,
@@ -97,6 +102,7 @@ button.btn.btn-default.btn-lg.cancel-button {
 .btn-primary:focus,
 .btn-primary:active {
   background-color: #337ab7;
+  border-color: #156eba;
 }
 
 .glyphicon {
@@ -175,7 +181,7 @@ Search
   font-size: 50px;
   font-weight: 700;
   height: 80px;
-  margin: 150px 0 150px 25px;
+  margin: 150px 0;
 }
 
 .search-input-div {
@@ -185,10 +191,9 @@ Search
 .search-button {
   background-color: #faf5f5;
   border-bottom-left-radius: 0;
-  /*border-left: none;*/
   border-top-left-radius: 0;
   height: 80px;
-  margin: 150px 0 150px 25px;
+  margin: 150px 0;
 }
 
 .search-button-div {
@@ -351,4 +356,13 @@ About
 #email:hover, #email:focus, #email:active,
 #linkedIn:hover, #linkedIn:focus, #linkedIn:active {
   color: #70ba3c;
+}
+
+/*----------------------------------------------------------------------
+Media Queries
+---------------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  .search-input {
+    font-size: 25px;
+  }
 }

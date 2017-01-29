@@ -1,8 +1,18 @@
 <section class="search">
 
   <div class="row search-input-row">
-    <form ng-submit="api.searchAPI(api.search, api.location)">
-      <div class="form-group">
+
+<div class="col-md-8 col-md-offset-2">
+  <form ng-submit="api.searchAPI(api.search, api.location)">
+    <div class="input-group">
+      <input class="form-control input-lg search-input" type="search" ng-model="api.search" autofocus/>
+      <span class="input-group-btn">
+            <button class="btn btn-default btn-lg search-button" type="submit">Search</button>
+          </span>
+    </div>
+  </form>
+</div>
+      <!-- <div class="form-group"> -->
         <!-- The <select> below will be used in future when I implement broader
               search parameters. -->
         <!-- <select name="query-location" ng-model="api.location">
@@ -34,14 +44,11 @@
             <span>Video</span>
           </option>
         </select> -->
-        <div class="col-md-7 col-md-offset-2 col-sm-10 col-xs-10 search-input-div">
-          <input class="form-control input-lg search-input" type="search" ng-model="api.search" autofocus/>
+        <!-- <div class="col-md-10 col-md-offset-2 col-sm-10 col-xs-10 search-input-div">
         </div>
-        <div class="col-md-2 col-sm-2 col-xs-2 search-button-div">
-          <button class="btn btn-default btn-lg search-button" type="submit">Search</button>
-        </div>
-    </form>
-    </div>
+        <div class="col-md-2 col-sm-2 col-xs-1 search-button-div">
+        </div> -->
+    <!-- </div> -->
   </div>
 
 <!-- Search Results -->
