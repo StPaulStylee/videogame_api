@@ -4,8 +4,7 @@
 
 ###What is videogame_api?
 The web application - which is actually titled BrokenClock! - is a CRUD application that uses a video game API developed by a website
-named Giant Bomb. With this API, users can search any video game title and receive up to a 30 results on the title they entered. From their,
-they can add that title to their favorites or add them to their wishlist.
+named Giant Bomb. With this API, users can search any video game title and receive up to a 30 results on the title they entered. From their, they can add that title to their favorites or add them to their wishlist.  FYI, when making a query, the API can be a bit sluggish, but I promise you, your results will appear if you just hang in their a few seconds!
 
 ###How was it built?
 The application uses SANE Stack - SQL(PostgreSQL), Express, Angular, and Node. Also, Various Angular dependencies were used including -
