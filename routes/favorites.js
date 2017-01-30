@@ -2,7 +2,7 @@ const router = require('express').Router();
 const pool = require('../database/connection');
 
 router.post('/', function(req, res){
-  pool.connect(process.env.DATABASE_URL, function(err, client, done){
+  pool.connect(function(err, client, done){
 
     try {
       if(err) {
@@ -27,7 +27,7 @@ router.post('/', function(req, res){
 });
 
 router.get('/', function(req, res){
-  pool.connect(process.env.DATABASE_URL, function(err, client, done){
+  pool.connect(function(err, client, done){
     try {
       if(err) {
         console.log('Error connecting to the DB: ', err);
@@ -53,7 +53,7 @@ router.get('/', function(req, res){
 router.delete('/:id', function(req, res){
   var id = req.params.id;
   console.log(req.params);
-  pool.connect(process.env.DATABASE_URL, function(err, client, done){
+  pool.connect(function(err, client, done){
     try {
       if(err) {
         console.log('Error connecting to the DB: ', err);
@@ -81,7 +81,7 @@ router.put('/:id', function(req, res){
   var comment = req.body.favorite_comment;
   console.log(req.params);
   console.log(req.body);
-  pool.connect(process.env.DATABASE_URL, function(err, client, done){
+  pool.connect(function(err, client, done){
     try {
       if(err) {
         console.log('Error connecting to the DB: ', err);
