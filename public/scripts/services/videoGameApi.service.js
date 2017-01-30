@@ -2,7 +2,7 @@ angular.module('videoGameApp')
        .service('vgAPI', VideoGameAPIService);
 
 function VideoGameAPIService ($http) {
-  var API = 'http://www.giantbomb.com/api';
+  var API = '//www.giantbomb.com/api';
   var key = 'f10f942d8c6c6a04af3c3774e257daa795c10589';
 
   var service = this;
