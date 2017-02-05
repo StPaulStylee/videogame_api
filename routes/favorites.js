@@ -2,7 +2,7 @@ const router = require('express').Router();
 const pool = require('../database/connection');
 
 router.post('/', function(req, res){
-  pool.connect(function(err, client, done){
+  pool.connect(process.env.DATABASE_URL, function(err, client, done){
 
     try {
       if(err) {
