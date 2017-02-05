@@ -10,6 +10,11 @@ named Giant Bomb. With this API, users can search any video game title and recei
 The application uses SANE Stack - SQL(PostgreSQL), Express, Angular, and Node. Also, Various Angular dependencies were used including -
 angular-route, angular-animate, angular-sanitze, ui-select, and ui-bootstrap.
 
+###How to use it?
+If you are not receiving any results upon a search, it is likely you are coming across a CORS issue. To resolve, you may
+need to download a plugin on your brower that allows for Cross Origin Requests. Simply search "CORS Plugin" for the browser
+of your choice and you will find may options that will resolve the issue.
+
 ### What's next?
 Currently, there is no user authentication built into the application. In the near future, I will use Passport.js to create a registration 
 and login feature, which will allow for users to have a much more personal experience. Also, I will expand upon the searches capabilities
