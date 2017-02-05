@@ -7,8 +7,8 @@ id SERIAL PRIMARY KEY,
   platforms varchar ARRAY,
   game_rating varchar ARRAY,
   game_image varchar(120),
-  ADD favorite_comment varchar(500);
-  ADD site_detail_url(250);
+  favorite_comment varchar(500),
+  site_detail_url varchar(250)
 );
 
 /*2. Create Wishlist Table */
@@ -17,7 +17,6 @@ id SERIAL PRIMARY KEY,
   title varchar(120) NOT NULL,
   description varchar(250),
   platforms varchar (250),
-  ADD game_image varchar(120)
-  ADD site_detail_url(250);
-
+  game_image varchar(120),
+  site_detail_url varchar(250)
 );
