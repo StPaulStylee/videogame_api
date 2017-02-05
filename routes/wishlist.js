@@ -6,7 +6,7 @@ router.post('/', function(req, res){
     console.log(req.body);
     try {
       if(err) {
-        console.log('Error connecting to the DB: ', err);
+        console.log('Error connecting to the DB at WISH POST: ', err);
         res.sendStatus(500);
         return;
       }
@@ -30,7 +30,7 @@ router.get('/', function(req, res){
   pool.connect(function(err, client, done){
     try {
       if(err) {
-        console.log('Error connecting to the DB: ', err);
+        console.log('Error connecting to the DB at WISH GET: ', err);
         res.sendStatus(500);
         return;
       }
@@ -56,7 +56,7 @@ router.delete('/:id', function(req, res){
   pool.connect(function(err, client, done){
     try {
       if(err) {
-        console.log('Error connecting to the DB: ', err);
+        console.log('Error connecting to the DB at WISH DEL: ', err);
         res.sendStatus(500);
         return;
       }

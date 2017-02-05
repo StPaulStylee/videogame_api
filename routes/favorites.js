@@ -6,7 +6,7 @@ router.post('/', function(req, res){
 
     try {
       if(err) {
-        console.log('Error connecting to the DB: ', err);
+        console.log('Error connecting to the DB at FAV POST: ', err);
         res.sendStatus(500);
         return;
       }
@@ -30,7 +30,7 @@ router.get('/', function(req, res){
   pool.connect(function(err, client, done){
     try {
       if(err) {
-        console.log('Error connecting to the DB: ', err);
+        console.log('Error connecting to the DB at FAV GET: ', err);
         res.sendStatus(500);
         return;
       }
@@ -56,7 +56,7 @@ router.delete('/:id', function(req, res){
   pool.connect(function(err, client, done){
     try {
       if(err) {
-        console.log('Error connecting to the DB: ', err);
+        console.log('Error connecting to the DB at FAV DEL: ', err);
         res.sendStatus(500);
         return;
       }
@@ -84,7 +84,7 @@ router.put('/:id', function(req, res){
   pool.connect(function(err, client, done){
     try {
       if(err) {
-        console.log('Error connecting to the DB: ', err);
+        console.log('Error connecting to the DB at FAV EDIT: ', err);
         res.sendStatus(500);
         return;
       }
