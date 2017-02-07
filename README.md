@@ -21,4 +21,4 @@ and login feature, which will allow for users to have a much more personal exper
 by allowing users to search in different categories, which will undoubtabley, give them wider results.
 
 ### Is BrokenClock! live on the web?
-Currently that application is running on Heroku, but the features that use a database I not currently functioning. I am in the midst of getting a PostgreSQL DB set up, so please check back soon.
+Currently that application is running on Heroku, but the features that use a database are not currently functioning. I am in the midst of getting a PostgreSQL DB set up, so please check back soon.
