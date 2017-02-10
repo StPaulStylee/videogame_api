@@ -7,9 +7,9 @@
         <img ng-if="game.game_image != null" class="img-thumbnail img-responsive center-block results-image" ng-src="{{ game.game_image }}" alt=" {{ game.title }} image" />
       </div>
       <div class="col-md-10 content">
-        <h3 class="game-name">{{ game.name }}</h3>
+        <h3 class="game-name">{{ game.title }}</h3>
         <p>{{ game.description }} <span><a class="giantbomb-link" href="{{ game.site_detail_url }}" target="_blank"><span class="giantbomb-link-more">More</span><span class="giantbomb-link-details"> details...</span></a></span></p>
-        <p><b>Platform:</b><span ng-repeat="platforms in game.platforms track by $index">{{ platforms }}</span></p>
+        <p><b>Platform: </b><span ng-repeat="platforms in game.platforms track by $index">{{ platforms }}</span></p>
         <div class="row">
           <div class="col-md-12">
             <button class="btn btn-warning btn-lg remove-button" type="button" ng-click="wish.openRemoveWishlistModal(game)">Remove</button>
