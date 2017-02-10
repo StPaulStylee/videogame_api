@@ -14,6 +14,8 @@ angular-route, angular-animate, angular-sanitze, ui-select, and ui-bootstrap.
 If you are not receiving any results upon a search, it is likely you are coming across a CORS issue. To resolve, you may
 need to download a plugin on your brower that allows for Cross Origin Requests. Simply search "CORS Plugin" for the browser
 of your choice and you will find may options that will resolve the issue.
+* [Chrome Plugin] (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi)
+* [Firefox Plugin] (https://addons.mozilla.org/en-US/firefox/addon/cors-everywhere/)
 
 ### What's next?
 Currently, there is no user authentication built into the application. In the near future, I will use Passport.js to create a registration 
@@ -21,4 +23,4 @@ and login feature, which will allow for users to have a much more personal exper
 by allowing users to search in different categories, which will undoubtabley, give them wider results.
 
 ### Is BrokenClock! live on the web?
-Check by tomorrow where I will have it deployed onto Heroku!
+Currently that application is running on Heroku, but the features that use a database are not currently functioning. I am in the midst of getting a PostgreSQL DB set up, so please check back soon.
