@@ -26,7 +26,7 @@ function FavoriteService($http) {
 
   service.addFavorite = function(data) {
     service.newFavorite = {
-      name: data.name,
+      title: data.name,
       description: data.deck,
       release_date: data.original_release_date,
       platforms: service.getPlatforms(data),

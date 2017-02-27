@@ -6,10 +6,10 @@ function EditFavoriteController (favServ, $uibModalInstance) {
   var ctrl = this;
 
   ctrl.submitEdit = function (comment) {
-    console.log("New Comment: ", comment);
+    // console.log("New Comment: ", comment);
     favServ.submitEdit(comment).then(function(response){
       ctrl.closeModal();
-      console.log('Comment Updated!', response);
+      // console.log('Comment Updated!', response);
     });
   };
 
@@ -17,7 +17,7 @@ function EditFavoriteController (favServ, $uibModalInstance) {
     // ctrl.favoriteToRemove = favServ.getFavoriteId();
     favServ.removeFavorite(favServ.storedGame.id).then(function(response){
       ctrl.closeModal();
-      console.log('Favorite Deleted!', response);
+      // console.log('Favorite Deleted!', response);
     });
   };
 

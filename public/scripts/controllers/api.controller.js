@@ -9,9 +9,7 @@ function videoGameAPIController(vgAPI) {
   ctrl.searchAPI = function(searchTerm) {
     ctrl.searchResults;
     vgAPI.searchAPI(searchTerm).then(function(results){
-      console.log('Results from search: ', results);
       ctrl.searchResults = results.data.results;
-      console.log('Saved object: ', ctrl.searchResults);
     });
   }
 

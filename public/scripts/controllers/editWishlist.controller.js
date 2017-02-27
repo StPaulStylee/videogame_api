@@ -8,7 +8,7 @@ function EditWishlistController(wishServ, $uibModalInstance) {
   ctrl.removeWish = function(){
     wishServ.removeWish(wishServ.storedGame.id).then(function(response){
       ctrl.closeModal();
-      console.log('Wish Removed!', response);
+      // console.log('Wish Removed!', response);
     });
   };
 
