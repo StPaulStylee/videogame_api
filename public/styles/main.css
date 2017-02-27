@@ -119,6 +119,21 @@ button.btn.btn-default.btn-lg.cancel-button {
   padding-top: 100px;
 }
 
+.platform-list {
+  background-color: #70ba3c;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 0 5px;
+}
+
+.rating-list {
+  background-color: #e85b4d;
+  border-radius: 5px;
+  margin-right: 5px;
+  padding: 0 5px;
+}
+
+
 
 /*----------------------------------------------------------------------
 Navigation
