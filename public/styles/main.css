@@ -212,6 +212,10 @@ Search
   margin: 150px 0;
 }
 
+ul.query-selectors {
+  margin: 0 auto;
+}
+
 .search-button-div {
   padding-left: 0;
 }
