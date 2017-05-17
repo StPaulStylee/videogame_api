@@ -6,13 +6,41 @@
   <form ng-submit="api.searchAPI(api.search, api.location)">
     <div class="input-group">
       <input class="form-control input-lg search-input" type="search" ng-model="api.search" autofocus/>
-      <span class="input-group-btn">
+        <span class="input-group-btn">
             <button class="btn btn-default btn-lg search-button" type="submit">Search</button>
-          </span>
+        </span>
     </div>
+<ul class="query-selectors">
+  <input type="radio" name="query-item" value="" checked />
+  <label class="radio-inline query-item game">Game Name
+      </label>
+  <input type="radio" name="query-item" value="" />
+  <label class="radio-inline query-item franchise">Franchise Name
+      </label>
+  <input type="radio" name="query-item" value="" />
+  <label class="radio-inline query-item character"> Character Name
+      </label>
+  <input type="radio" name="query-item" value="" />
+  <label class="radio-inline query-item concept">Game Concept
+      </label>
+  <input type="radio" name="query-item" value="" />
+  <label class="radio-inline query-item object">Game Object
+      </label>
+  <input type="radio" name="query-item" value="" />
+  <label class="radio-inline query-item location">Location
+      </label>
+  <input type="radio" name="query-item" value="" />
+  <label class="radio-inline query-item person">Person
+      </label>
+  <input type="radio" name="query-item" value="" />
+  <label class="radio-inline query-item company">Company Name
+      </label>
+  <input type="radio" name="query-item" value="" />
+  <label class="radio-inline query-item video">Video</label>
+</ul>
   </div>
 </div>
-  <div class="row query-selectors-row">
+  <!-- <div class="row query-selectors-row">
     <div class="col-m-10">
     <ul class="query-selectors">
       <label class="radio-inline query-item game">
@@ -44,7 +72,7 @@
       </label>
     </ul>
   </div>
-  </div>
+  </div> -->
   </form>
 </section>
 
