@@ -3,14 +3,33 @@
 <div class="row search-input-row">
 
 <div class="col-xs-8 col-xs-offset-2">
-  <form ng-submit="api.searchAPI(api.search, api.location)">
+  <form id="search-form" ng-submit="api.searchAPI(api.search, api.location)">
     <div class="input-group">
+      <div class="input-group-addon">
+        <div class="btn-group" uib-dropdown keyboard-nav>
+          <button id="simple-btn-keyboard-nav" type="button" class="btn btn-default btn-lg query-selectors" uib-dropdown-toggle>
+            Search Category <span class="caret"></span>
+          </button>
+          <select class="dropdown-menu" form="search-form" uib-dropdown-menu role="menu" aria-labelledby="search category specification">
+            <option role="menuitem" value="">Game Name</option>
+            <option role="menuitem" value="">Franchise Name</option>
+            <option role="menuitem" value="">Character Name</option>
+            <option role="menuitem" value="">Game Concept</option>
+            <option role="menuitem" value="">Game Object</option>
+            <option role="menuitem" value="">Location</option>
+            <option role="menuitem" value="">Person</option>
+            <option role="menuitem" value="">Company Name</option>
+            <option role="menuitem" value="">Video</option>
+
+          </select>
+        </div>
+      </div>
       <input class="form-control input-lg search-input" type="search" ng-model="api.search" autofocus/>
         <span class="input-group-btn">
             <button class="btn btn-default btn-lg search-button" type="submit">Search</button>
         </span>
     </div>
-<ul class="query-selectors">
+<!-- <ul class="query-selectors">
   <input type="radio" name="query-item" value="" checked />
   <label class="radio-inline query-item game">Game Name
       </label>
@@ -37,7 +56,7 @@
       </label>
   <input type="radio" name="query-item" value="" />
   <label class="radio-inline query-item video">Video</label>
-</ul>
+</ul> -->
   </div>
 </div>
   <!-- <div class="row query-selectors-row">
