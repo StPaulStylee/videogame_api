@@ -9,7 +9,7 @@
       <div class="col-md-10 content">
         <h3 class="game-name">{{ game.title }}</h3>
         <p>{{ game.description }} <span><a class="giantbomb-link" href="{{ game.site_detail_url }}" target="_blank"><span class="giantbomb-link-more">More</span><span class="giantbomb-link-details"> details...</span></a></span></p>
-        <p class="platform-p"><b>Platform: </b><span class="platform-list" ng-repeat="platforms in game.platforms track by $index">{{ platforms }}</span></p>
+        <p class="platform-p"><b>Platform: </b><span class="platform-list"> {{ game.platforms }}</span></p>
         <div class="row">
           <div class="col-md-12">
             <button class="btn btn-warning btn-lg remove-button" type="button" ng-click="wish.openRemoveWishlistModal(game)">Remove</button>
