@@ -3,25 +3,24 @@
 <div class="row search-input-row">
 
 <div class="col-xs-8 col-xs-offset-2">
-  <form id="search-form" ng-submit="api.searchAPI(api.search, api.location)">
+  <form id="search-form" ng-submit="api.searchAPI(api.search)">
     <div class="input-group">
       <div class="input-group-addon">
         <div class="btn-group" uib-dropdown keyboard-nav>
           <button id="simple-btn-keyboard-nav" type="button" class="btn btn-default btn-lg query-selectors" uib-dropdown-toggle>
-            Search Category <span class="caret"></span>
+            {{ api.dropdownDisplayCategory  }} <span class="caret"></span>
           </button>
-          <select class="dropdown-menu" form="search-form" uib-dropdown-menu role="menu" aria-labelledby="search category specification">
-            <option role="menuitem" value="">Game Name</option>
-            <option role="menuitem" value="">Franchise Name</option>
-            <option role="menuitem" value="">Character Name</option>
-            <option role="menuitem" value="">Game Concept</option>
-            <option role="menuitem" value="">Game Object</option>
-            <option role="menuitem" value="">Location</option>
-            <option role="menuitem" value="">Person</option>
-            <option role="menuitem" value="">Company Name</option>
-            <option role="menuitem" value="">Video</option>
-
-          </select>
+          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="search category specification">
+            <li class="query-item" role="menuitem" data-api="" data-category="Game Name" ng-click="api.setSearchCategory(['game', 'Game'])">Game</li>
+            <li class="query-item" role="menuitem" data-api="" data-category="Franchise Name" ng-click="api.setSearchCategory(['franchise', 'Franchise '])">Franchise</li>
+            <li class="query-item" role="menuitem" data-api="" data-category="Character Name" ng-click="api.setSearchCategory(['character', 'Character '])">Character</li>
+            <li class="query-item" role="menuitem" data-api="" data-category="Game Concept" ng-click="api.setSearchCategory(['concept', 'Game Concept '])">Game Concept</li>
+            <li class="query-item" role="menuitem" data-api="" data-category="Game Object" ng-click="api.setSearchCategory(['object', 'Game Object '])">Game Object</li>
+            <li class="query-item" role="menuitem" data-api="" data-category="Location" ng-click="api.setSearchCategory(['location', 'Location '])">Location</li>
+            <li class="query-item" role="menuitem" data-api="" data-category="Person" ng-click="api.setSearchCategory(['person', 'Person '])">Person</li>
+            <li class="query-item" role="menuitem" data-api="" data-category="Company Name" ng-click="api.setSearchCategory(['company', 'Company Name '])">Company Name</li>
+            <li class="query-item" role="menuitem" data-api="" data-category="Video" ng-click="api.setSearchCategory(['video', 'Video '])">Video</li>
+          </ul>
         </div>
       </div>
       <input class="form-control input-lg search-input" type="search" ng-model="api.search" autofocus/>
@@ -29,69 +28,8 @@
             <button class="btn btn-default btn-lg search-button" type="submit">Search</button>
         </span>
     </div>
-<!-- <ul class="query-selectors">
-  <input type="radio" name="query-item" value="" checked />
-  <label class="radio-inline query-item game">Game Name
-      </label>
-  <input type="radio" name="query-item" value="" />
-  <label class="radio-inline query-item franchise">Franchise Name
-      </label>
-  <input type="radio" name="query-item" value="" />
-  <label class="radio-inline query-item character"> Character Name
-      </label>
-  <input type="radio" name="query-item" value="" />
-  <label class="radio-inline query-item concept">Game Concept
-      </label>
-  <input type="radio" name="query-item" value="" />
-  <label class="radio-inline query-item object">Game Object
-      </label>
-  <input type="radio" name="query-item" value="" />
-  <label class="radio-inline query-item location">Location
-      </label>
-  <input type="radio" name="query-item" value="" />
-  <label class="radio-inline query-item person">Person
-      </label>
-  <input type="radio" name="query-item" value="" />
-  <label class="radio-inline query-item company">Company Name
-      </label>
-  <input type="radio" name="query-item" value="" />
-  <label class="radio-inline query-item video">Video</label>
-</ul> -->
   </div>
 </div>
-  <!-- <div class="row query-selectors-row">
-    <div class="col-m-10">
-    <ul class="query-selectors">
-      <label class="radio-inline query-item game">
-        <input type="radio" name="query-item" value="" checked  />Game Name
-      </label>
-      <label class="radio-inline query-item franchise">
-        <input type="radio" name="query-item" value="" /> Franchise Name
-      </label>
-      <label class="radio-inline query-item character">
-        <input type="radio" name="query-item" value="" /> Character Name
-      </label>
-      <label class="radio-inline query-item concept">
-        <input type="radio" name="query-item" value="" /> Game Concept
-      </label>
-      <label class="radio-inline query-item object">
-        <input type="radio" name="query-item" value="" /> Game Object
-      </label>
-      <label class="radio-inline query-item location">
-        <input type="radio" name="query-item" value="" /> Location
-      </label>
-      <label class="radio-inline query-item person">
-        <input type="radio" name="query-item" value="" /> Person
-      </label>
-      <label class="radio-inline query-item company">
-        <input type="radio" name="query-item" value="" /> Company Name
-      </label>
-      <label class="radio-inline query-item video">
-        <input type="radio" name="query-item" value="" /> Video
-      </label>
-    </ul>
-  </div>
-  </div> -->
   </form>
 </section>
 

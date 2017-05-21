@@ -9,7 +9,7 @@ function WishlistController(wishServ, $uibModal) {
     ctrl.wishlistItems;
     wishServ.getWishlist().then(function(wishes){
       ctrl.wishlistItems = wishes.data;
-      console.log(ctrl.wishlistItems);
+      // console.log(ctrl.wishlistItems);
     });
   };
 // This modal is available when clicking "add to wishlist" from search results
