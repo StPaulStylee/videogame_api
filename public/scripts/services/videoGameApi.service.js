@@ -1,9 +1,10 @@
 angular.module('videoGameApp')
        .service('vgAPI', VideoGameAPIService);
 
-function VideoGameAPIService ($http) {
+function VideoGameAPIService ($http, $sce) {
   var API = '//www.giantbomb.com/api';
   var key = 'f10f942d8c6c6a04af3c3774e257daa795c10589';
+  var url = $sce.trustAsResourceUrl(API + '/search');
 
   var service = this;
   // Uses a search query to find matching game info
@@ -17,8 +18,8 @@ function VideoGameAPIService ($http) {
         query: query,
         resources: resources,
         limit: 30,
+        jsonpCallbackParam: 'callback',
       },
-      jsonpCallbackParam: 'callback',
     }).then(function(response){
         console.log(response);
         return response;
