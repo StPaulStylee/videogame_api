@@ -21,9 +21,8 @@ function VideoGameAPIService ($http, $sce) {
         jsonpCallbackParam: 'callback',
       },
     }).then(function(response){
-        service.data = response.data;
-        console.log(service.data);
-        return service.data;
+        console.log(response);
+        return response;
     }, function(error){
         console.log(error);
     });
