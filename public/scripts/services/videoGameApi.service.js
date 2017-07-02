@@ -10,23 +10,21 @@ function VideoGameAPIService ($http, $sce) {
   // Uses a search query to find matching game info
   // in future I will put resources characteristic as a function param so
   // it will be able to accomplish more dynamic searches
+service.callback = function(data) {
+  console.log(data);
+  return data;
+}
+
   service.searchAPI = function (query, resources) {
     return $http.jsonp(url, {
       params: {
         api_key: key,
-        format: 'json',
+        format: 'jsonp',
         query: query,
         resources: resources,
         limit: 30,
-        jsonpCallbackParam: 'callback',
-      },
-    }).then(function(response){
-        console.log(response);
-        return response;
-    }, function(error){
-        console.log(error);
-    });
-  };
-
-
+        callback: json_callback,
+      }
+    }).then(service.callback(response));
+  }
 } // End of VideoGameAPIService
