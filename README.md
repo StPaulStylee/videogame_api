@@ -15,7 +15,7 @@ Simply pick your search criteria (it defaults to game), enter your search query,
 
 ### What's next?
 Currently, there is no user authentication built into the application. In the near future, I will use Passport.js to create a registration
-and login feature, which will allow for users to have a much more personal experience.
+and login feature, which will allow for users to have a much more personal experience. Further, I plan on expanding the schema in such a manner that users can "rate" a game and that rating with be aggregated into a "community rating" and shared with user on search.  Also, comments that are defined with each rating will also be available. There is an endless amount of possibilites with the data provided by the GiantBomb API, so who knows what else may lie ahead.
 
 ### Is BrokenClock! live on the web?
-Currently that application is running on Heroku, but the features that use a database are not currently functioning. I am in the midst of getting a PostgreSQL DB set up, so please check back soon. [Visit Here!] (https://radiant-dawn-24676.herokuapp.com/)
+It is temporarily offline while I implement proper JSONP support.
