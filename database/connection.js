@@ -7,7 +7,7 @@ const config = {
   database: 'vgAPI',
   password: 'Finally!',
   host: 'localhost',
-  port: 5432,
+  port: 5432
 }
 
 const pool = new pg.Pool(config);
