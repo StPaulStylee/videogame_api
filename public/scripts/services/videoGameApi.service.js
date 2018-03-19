@@ -7,15 +7,6 @@ function VideoGameAPIService ($http, $sce) {
   var url = $sce.trustAsResourceUrl(API + '/search/?');
 
   var service = this;
-  // Uses a search query to find matching game info
-  // in future I will put resources characteristic as a function param so
-  // it will be able to accomplish more dynamic searches
-// service.callback = function(data) {
-//   data = function(response) {
-//     console.log(response);
-//     return data;
-//   }
-// }
 
   service.searchAPI = function (query, resources) {
     return $http.jsonp(url, {
@@ -27,9 +18,12 @@ function VideoGameAPIService ($http, $sce) {
         resources: resources,
         limit: 30,
       }
-    }).then(function(response){
+    }).then(function(response) {
         console.log(response);
-        return response;
+        return response.data;
+    }).catch(function(err) {
+        console.log(err)
+        return err
     });
   }
 } // End of VideoGameAPIService

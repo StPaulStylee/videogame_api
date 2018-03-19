@@ -8,7 +8,9 @@ function videoGameAPIController(vgAPI) {
 
   ctrl.searchAPI = function(searchTerm) {
     ctrl.searchResults;
-    vgAPI.searchAPI(searchTerm, ctrl.searchCategorySelected).then(function(results){
+    vgAPI.searchAPI(searchTerm, ctrl.searchCategorySelected)
+    .then(function(results){
+      console.log("Results in cont: ", results)
       ctrl.searchResults = results.data.results;
       ctrl.searchResults.forEach(result => {
         ctrl.releaseDate = new Date(result.original_release_date);
@@ -22,6 +24,8 @@ function videoGameAPIController(vgAPI) {
       // ctrl.searchResults.original_release_date = ctrl.releaseDate.getDate() + "/"
       //                   + ctrl.releaseDate.getMonth() + 1 + "/"
       //                   + ctrl.releaseDate.getFullYear();
+    }).catch(function(err){
+      console.log(err)
     });
   }
 
